@@ -11,18 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2233dfd8-c47e-43bf-a44e-164fafa1f4e0" name="Default Changelist" comment="Installation du site symfony, avec la sécurité">
-      <change afterPath="$PROJECT_DIR$/boutique/public/images/gommettes1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boutique/public/images/gommettes2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boutique/public/images/gommettes3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boutique/public/images/gommettes4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boutique/public/images/gommettes5.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/migrations/Version20201103154331.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/src/Controller/AccueilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/Controller/AccueilController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boutique/config/packages/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/config/packages/framework.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boutique/templates/accueil/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/templates/accueil/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boutique/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/templates/base.html.twig" afterDir="false" />
     </list>
@@ -184,7 +174,8 @@
       <workItem from="1604481261673" duration="5033000" />
       <workItem from="1604493246330" duration="560000" />
       <workItem from="1604493818185" duration="104000" />
-      <workItem from="1604493935206" duration="10431000" />
+      <workItem from="1604493935206" duration="10441000" />
+      <workItem from="1604560018861" duration="18245000" />
     </task>
     <task id="LOCAL-00001" summary="Installation du site symfony, avec la sécurité">
       <created>1604493381574</created>
@@ -193,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604493381574</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Installation du site symfony, avec la sécurité">
+      <created>1604504673607</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604504673607</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +207,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Installation du site symfony, avec la sécurité" />
@@ -219,19 +218,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="715" y="344" key="#Notifications/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604494403344" />
-    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog" timestamp="1604503377878">
+    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog" timestamp="1604564980490">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1828" y="92" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604484788015" />
-    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604503377878" />
+    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604564980490" />
     <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1604493995289">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604493995289" />
-    <state x="691" y="243" key="NewPhpClassDialog" timestamp="1602069642713">
+    <state x="691" y="243" key="NewPhpClassDialog" timestamp="1604566187687">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="691" y="243" key="NewPhpClassDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1602069642713" />
+    <state x="691" y="243" key="NewPhpClassDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604566187687" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1602076930998">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -252,11 +251,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="761" y="426" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604493893343" />
-    <state x="830" y="412" key="publish.login" timestamp="1604494708295">
+    <state x="830" y="412" key="publish.login" timestamp="1604561727925">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1090" y="412" key="publish.login/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604483816064" />
-    <state x="830" y="412" key="publish.login/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604494708295" />
+    <state x="830" y="412" key="publish.login/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604561727925" />
     <state x="830" y="412" key="publish.login/0.0.1920.1040@0.0.1920.1040" timestamp="1604416649474" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/boutique/templates/produit/index.html.twig</url>
+          <line>23</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

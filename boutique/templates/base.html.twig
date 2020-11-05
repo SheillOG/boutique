@@ -20,7 +20,7 @@
 
         {% block navbar %}
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">Ma Boutique</a>
+                <a class="navbar-brand" href="#">Goumette Shop</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
                         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -45,17 +45,30 @@
                         </li>
                     </ul>
 
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <ul class="navbar-nav  mt-2 mt-lg-0">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path("tag_index") }}">Tag <span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
 
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path("correspondre_index") }}">Correspondre <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+
+
+
+                    <form class="form my-2 my-lg-0">
+                        <a href="{{ path("app_login") }}" class="btn btn-warning">Panier <span class="bg-white">{{ app.session.get("total_produits") }}</span></a>
+                    </form>
+
+
                     <form class="form-inline my-2 my-lg-0">
                         {% if not is_granted('ROLE_USER') %}
-                            <a href="{{ path("app_login") }}" class="btn btn-primary">Se connecter</a>
+                            <a href="{{ path("app_login") }}" class="btn btn-danger">Se connecter</a>
                         {% else %}
-                            <a href="{{ path("app_logout") }}" class="btn btn-warning">Se déconnecter</a>
+                            <a href="{{ path("app_logout") }}" class="btn btn-danger">Se déconnecter</a>
                         {% endif %}
                     </form>
                 </div>
