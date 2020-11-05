@@ -12,9 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2233dfd8-c47e-43bf-a44e-164fafa1f4e0" name="Default Changelist" comment="Installation du site symfony, avec la sécurité">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/config/packages/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/config/packages/framework.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/templates/accueil/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/templates/accueil/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,6 +173,7 @@
       <workItem from="1604493818185" duration="104000" />
       <workItem from="1604493935206" duration="10441000" />
       <workItem from="1604560018861" duration="18245000" />
+      <workItem from="1604585126794" duration="537000" />
     </task>
     <task id="LOCAL-00001" summary="Installation du site symfony, avec la sécurité">
       <created>1604493381574</created>
@@ -191,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604504673607</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Installation du site symfony, avec la sécurité">
+      <created>1604585285138</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604585285138</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,18 +219,20 @@
     <option name="LAST_COMMIT_MESSAGE" value="Installation du site symfony, avec la sécurité" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="715" y="344" key="#Notifications" timestamp="1604494403344">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1205" y="344" key="#Notifications" timestamp="1604585659900">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1205" y="344" key="#Notifications/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604585659900" />
     <state x="715" y="344" key="#Notifications/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604494403344" />
     <state x="92" y="92" width="1736" height="856" key="DirDiffDialog" timestamp="1604564980490">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1828" y="92" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604484788015" />
     <state x="92" y="92" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604564980490" />
-    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1604493995289">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1180" y="261" key="FileChooserDialogImpl" timestamp="1604585527405">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1180" y="261" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604585527405" />
     <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604493995289" />
     <state x="691" y="243" key="NewPhpClassDialog" timestamp="1604566187687">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -235,13 +242,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1602076930998" />
-    <state x="477" y="151" key="SettingsEditor" timestamp="1604493998265">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1443" y="151" key="SettingsEditor" timestamp="1604585529420">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1443" y="151" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604585529420" />
     <state x="477" y="151" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604493998265" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604494375863">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1368" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604585653864">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1368" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604585653864" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604494375863" />
     <state x="667" y="52" width="585" height="936" key="find.popup" timestamp="1602073741591">
       <screen x="0" y="0" width="1920" height="1040" />
