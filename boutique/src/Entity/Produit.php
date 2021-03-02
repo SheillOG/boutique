@@ -33,6 +33,33 @@ class Produit
      */
     private $id_categorie;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $stock;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $image;
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function getStock(): ?int
+    {
+        return $this->stock;
+    }
+
+    public function setStock(int $stock): self
+    {
+        $this->stock = $stock;
+
+        return $this;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

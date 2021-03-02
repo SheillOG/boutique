@@ -3,28 +3,65 @@
 {% block title %}Produit{% endblock %}
 
 {% block body %}
-    <h1>Produit</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ produit.id }}</td>
-            </tr>
-            <tr>
-                <th>Libelle</th>
-                <td>{{ produit.libelle }}</td>
-            </tr>
-            <tr>
-                <th>Tarif</th>
-                <td>{{ produit.tarif }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container text-center">
+        <div class="card text-center">
+            <div class="container-fliud">
+                <div class="wrapper row">
+                    <div class="preview col-md-6">
 
-    <a href="{{ path('produit_index') }}">back to list</a>
+                        <div class="preview-pic tab-content">
+                            <div class="tab-pane active" id="pic-1">
+                                <tr>
+                                    <td><img src="{{ asset('')~produit.image }}" width="200" height="250"></td>
+                                </tr>
+                            </div>
 
-    <a href="{{ path('produit_edit', {'id': produit.id}) }}">edit</a>
+                        </div>
 
-    {{ include('produit/_delete_form.html.twig') }}
+
+                    </div>
+                    <div class="details col-md-6">
+                        <br>
+                        <h3 class="product-title"><u>{{ produit.libelle }} {{ produit.idcategorie }}</u></h3>
+                        <p class="product-description">Vous avez toujours rever d'une cape Minecon ?</p>
+                        <h4 class="price">Prix: <span>{{ produit.tarif }}</span></h4>
+                        <h5 class="stock">Stock: <span>{{ produit.stock }}</span></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+{#    <h1>Produit</h1>#}
+
+{#    <table class="table">#}
+{#        <tbody>#}
+{#            <tr>#}
+{#                <th>Id</th>#}
+{#                <td>{{ produit.id }}</td>#}
+{#            </tr>#}
+{#            <tr>#}
+{#                <th>Libelle</th>#}
+{#                <td>{{ produit.libelle }}</td>#}
+{#            </tr>#}
+{#            <tr>#}
+{#                <th>Tarif</th>#}
+{#                <td>{{ produit.tarif }}</td>#}
+{#            </tr>#}
+{#            <tr>#}
+{#                <th>Prodyut</th>#}
+{#                <td><img src="{{ produit.image }}" width="200" height="200"></td>#}
+{#            </tr>#}
+{#        </tbody>#}
+{#    </table>#}
+
+{#    <a href="{{ path('produit_index') }}">back to list</a>#}
+
+{#    <a href="{{ path('produit_edit', {'id': produit.id}) }}">edit</a>#}
+
+{#    {{ include('produit/_delete_form.html.twig') }}#}
 {% endblock %}

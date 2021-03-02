@@ -19,8 +19,8 @@
                 <td>{{ categorie.id }}</td>
                 <td>{{ categorie.libelle }}</td>
                 <td>
-                    <a href="{{ path('categorie_show', {'id': categorie.id}) }}"class = 'btn btn-danger'>show</a>
-                    <a href="{{ path('categorie_edit', {'id': categorie.id}) }}"class = 'btn btn-danger'>edit</a>
+                    <a href="{{ path('categorie_show', {'id': categorie.id}) }}"class = 'btn btn-info'>show</a>
+                    <a href="{{ path('categorie_edit', {'id': categorie.id}) }}"class = 'btn btn-warning'>edit</a>
                 </td>
             </tr>
         {% else %}

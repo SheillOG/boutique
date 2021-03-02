@@ -1,30 +1,113 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AccueilController!{% endblock %}
+{% block title %}Minecon Cape Account Shop{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <style>
+        .example-wrapper {
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+            font: 18px/1.5 sans-serif;
+        }
 
-<div class="col-12">
-    <div class="row">
-        <div class="col-12">
-            <div class="jumbotron">
-                <div class="text text-center">
-                    Bienvenue sur la boutique
+        .example-wrapper code {
+            background: #F5F5F5;
+            padding: 2px 6px;
+        }
+    </style>
+
+{#    <div class="container" >#}
+
+{#        <div class="row" >#}
+{#            <div class="col-12" >#}
+{#                <div class="jumbotron" style="background-color:#ea9f9f;"> #}
+{#                    <div class="text text-center">#}
+{#                        <a style="color:#ffffff"><u>PROMOTION DE NOEL -35%</u></a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+
+    <div class="container" >
+
+        <div class="row" >
+            <div class="col-12" >
+                <div class="jumbotron" style="background-color:#ea9f9f;">
+                    <div class="text text-center">
+                        <a style="color:#ffffff"><u>Satisfait ou remboursé</u></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        {%  for i in 1..5 %}
-            <div class="col-1">
-                <img src="{{ asset('images/gommettes'~i~'.jpg') }}"class="rounded img-fluid " alt="gommettes rondes">
-            </div>
-        {% endfor %}
-    </div>
 
-</div>
+        <div class="row text-center">
+                <p class="col-2"><a href="{{ path('produit_show', {'id': 1}) }}"> <img src="{{ asset('images/Minecon1.png') }} " class="rounded img-fluid"
+                                      alt="Minecon 2011"> </a> <br/>Minecon 2011 <br/><a style="color:#c12c2c">€150 </a><s><FONT
+                                size="2pt">€200</FONT></s></p>
+            </a>
+
+            <p class="col-2"><a href="{{ path('produit_show', {'id': 2}) }}"><img src="{{ asset('images/Minecon2.png') }}" class="rounded img-fluid "
+                                                                       alt="Minecon 2012"></a> <br> Minecon 2012 <br><a style="color:#C12C2C">€190 </a><s><FONT
+                            size="2pt">€230</FONT></s></p>
+            <p class="col-2"><a href="{{ path('produit_show', {'id': 3}) }}"><img src="{{ asset('images/Minecon3.png') }}" class="rounded img-fluid "
+                                                                       alt="Minecon 2013"></a> <br> Minecon 2013 <br><a style="color:#C12C2C">€250 </a><s><FONT
+                            size="2pt">€320</FONT></s></p>
+            <p class="col-2"><a href="{{ path('produit_show', {'id': 4}) }}"><img src="{{ asset('images/Minecon4.png') }}" class="rounded img-fluid "
+                                                                       alt="Minecon 2015"></a> <br> Minecon 2015 <br><a style="color:#C12C2C">€210 </a><s><FONT
+                            size="2pt">€290</FONT></s></p>
+            <p class="col-2"><a href="{{ path('produit_show', {'id': 5}) }}"><img src="{{ asset('images/Minecon5.png') }}" class="rounded img-fluid "
+                                  alt="Minecon 2016"></a> <br> Minecon 2016 <br><a style="color:#C12C2C">€120 </a><s><FONT
+                            size="2pt">€170</FONT></s></p>
+            <p class="col-2"><a href="{{ path('produit_show', {'id': 6}) }}"><img src="{{ asset('images/Minecon6.png') }}" class="rounded img-fluid "
+                                  alt="Cobalt"></a> <br> Cobalt <br><a style="color:#C12C2C">€270 </a><s><FONT
+                            size="2pt">€350</FONT></s></p>
+
+
+        </div>
+
+
+
+{#        <div class="row">#}
+{#            {% for i in 1..6 %}#}
+{#                <div class="col">#}
+{#                    <img src="{{ asset('images/Minecon'~i~'.png') }}" class="rounded img-fluid">#}
+{#                </div>#}
+{#            {% endfor %}#}
+{#        </div>#}
+
+
+
+    </div>
+    {% if is_granted('ROLE_ADMIN') %}
+        <table class="table">
+            <tbody>
+            <div class="wrapper">
+                <!-- Sidebar -->
+                <nav id="sidebar">
+                    <div class="sidebar-header">
+                        <br>
+                        <h3><center>Minecon Shop</center></h3>
+                    </div>
+
+                    <ul class="list-unstyled components sidebar">
+                        <p><center><u>Panel Admin</u></center></p>
+                        <HR align=center size=10 width="50%" color="#fffffff">
+                        <li>
+                            <a style="color: white" href="{{ path('produit_index')}}">⬦ Produit ↠</a>
+                        </li>
+                        <li>
+                            <a style="color: white" href="#">⬦ Profil ↠</a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+            </div>
+            </tbody>
+        </table>
+    {% endif %}
+
+
+
 {% endblock %}

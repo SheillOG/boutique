@@ -24,7 +24,7 @@ class Contenir
     private $id_produit;
 
     /**
-     * @ORM\ManyToOne(targetEntity=panier::class)
+     * @ORM\ManyToOne(targetEntity=Panier::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $id_panier;
@@ -51,12 +51,12 @@ class Contenir
         return $this;
     }
 
-    public function getIdPanier(): ?panier
+    public function getIdPanier(): ?Panier
     {
         return $this->id_panier;
     }
 
-    public function setIdPanier(?panier $id_panier): self
+    public function setIdPanier(?Panier $id_panier): self
     {
         $this->id_panier = $id_panier;
 

@@ -1,38 +1,71 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Produit index{% endblock %}
+{% block title %}Produit disponible{% endblock %}
 
 {% block body %}
-    <h1>Produit index</h1>
+    <style>
+        .example-wrapper { margin: auto; max-width: 1500px; width: 95%; font: 18px/1.5 sans-serif; }
+    </style>
 
-    <table class="table">
-        <thead>
+    <div class="example-wrapper">
+        {% if is_granted('ROLE_ADMIN') %}
+            <h1 class="text text-center"><u>Panel Produit Admin</u></h1>
+        {% endif %}
+        <h1 class="text text-center">Cape Minecon</h1>
+
+        <table class="table">
+            <thead class="thead-dark">
             <tr>
+                {% if is_granted('ROLE_ADMIN') %}
                 <th>Id</th>
-                <th>Libelle</th>
+                <th>Categorie</th>
+                {% endif %}
+                <th>Categorie</th>
+                <th>Produit</th>
                 <th>Tarif</th>
+                <th>Stock</th>
+                <th>Couleur</th>
+                {% if is_granted('ROLE_ADMIN') %}
                 <th>actions</th>
+                {% endif %}
+                {% if is_granted('ROLE_USER') %}
+                <th>Ajout</th>
+                {% endif %}
             </tr>
-        </thead>
-        <tbody>
-        {% for produit in produits %}
-            <tr>
-                <td>{{ produit.id }}</td>
-                <td>{{ produit.libelle }}</td>
-                <td>{{ produit.tarif }}</td>
-                <td>
-                    <a href="{{ path('produit_show', {'id': produit.id}) }}"class = 'btn btn-danger'>show</a>
-                    <a href="{{ path('produit_edit', {'id': produit.id}) }}"class = 'btn btn-danger'>edit</a>
-                    <a href="{{ path('panier_add', {'id': produit.id}) }}"class = 'btn btn-danger'> +</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for produit in produits %}
+                <tr>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <td>{{ produit.id }}</td>
+                    {% endif %}
+                        <td>{{ produit.idcategorie }}</td>
+                        <td><u>{{ produit.libelle }}</u></td>
+                        <td>{{ produit.tarif }}</td>
+                        <td>{{ produit.stock }}</td>
+                        <td><img src="{{ asset('')~produit.image }}" width="150" height="200"></td>
+                        <td>
+                            {% if is_granted('ROLE_ADMIN') %}
+                            <a href="{{ path('produit_show', {'id': produit.id}) }}"class = 'btn btn-info'>show</a>
+                            <a href="{{ path('produit_edit', {'id': produit.id}) }}"class = 'btn btn-warning'>edit</a>
+                            {% endif %}
+                            <a href="{{ path('panier_add', {'id': produit.id}) }}"class = 'btn btn-danger'> +</a>
+                        </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('produit_new') }}">Create new</a>
+
+
+        <a href="{{ path('produit_new') }}">Create new</a>
+
+    </div>
+
+
+
 {% endblock %}

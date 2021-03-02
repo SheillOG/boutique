@@ -19,12 +19,12 @@ class Panier
     private $id;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="string", length=50)
      */
     private $date_creation;
 
     /**
-     * @ORM\Column(type="decimal", precision=15, scale=2)
+     * @ORM\Column(type="decimal", precision=10, scale=2)
      */
     private $montant_total;
 
@@ -33,12 +33,12 @@ class Panier
         return $this->id;
     }
 
-    public function getDateCreation(): ?dateTime
+    public function getDateCreation(): ?string
     {
         return $this->date_creation;
     }
 
-    public function setDateCreation(dateTime $date_creation): self
+    public function setDateCreation(string $date_creation): self
     {
         $this->date_creation = $date_creation;
 
@@ -56,4 +56,10 @@ class Panier
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->montant_total;
+    }
+
 }

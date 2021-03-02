@@ -2,11 +2,13 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="icon" href="images/favicon.ico">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
 
         {% block head_css %}
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+            <link rel="stylesheet" href="{{ asset('style.css') }}">
         {% endblock %}
         {% block head_js %}
             <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
@@ -15,62 +17,87 @@
         {% endblock %}
 
     </head>
-    <body>
-
-
+    <body style="background-color:#ffffff" >
         {% block navbar %}
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">Goumette Shop</a>
+            <nav class="navbar navbar-expand-lg navbar-light " style="background-color:#d8d8d8">
+                <img src="{{ asset('images/icon.png') }}" width="60" height="60">
+                <a class="navbar-brand" href="{{ path("accueil") }}">Minecon Shop</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
                         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav  mt-2 mt-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ path("accueil") }}">Accueil <span class="sr-only">(current)</span></a>
-                        </li>
-                    </ul>
-
-
-                    <ul class="navbar-nav  mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path("categorie_index") }}">Catégories <span class="sr-only">(current)</span></a>
-                        </li>
-                    </ul>
-
-                    <ul class="navbar-nav  mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path("produit_index") }}">Produits <span class="sr-only">(current)</span></a>
-                        </li>
-                    </ul>
-
-                    <ul class="navbar-nav  mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path("tag_index") }}">Tag <span class="sr-only">(current)</span></a>
-                        </li>
-                    </ul>
-
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path("correspondre_index") }}">Correspondre <span class="sr-only">(current)</span></a>
-                        </li>
-                    </ul>
 
 
 
-                    <form class="form my-2 my-lg-0">
-                        <a href="{{ path("app_login") }}" class="btn btn-warning">Panier <span class="bg-white">{{ app.session.get("total_produits") }}</span></a>
-                    </form>
 
 
-                    <form class="form-inline my-2 my-lg-0">
+{#                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">#}
+{#                    <ul class="navbar-nav  mt-2 mt-lg-0">#}
+{#                        <li class="nav-item active">#}
+{#                            <a class="nav-link" href="{{ path("accueil") }}">Accueil <span class="sr-only">(current)</span></a>#}
+{#                        </li>#}
+{#                    </ul>#}
+
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                </ul>
+
+{#                    <ul  class="navbar-nav  mt-2 mt-lg-0">#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{{ path("categorie_index") }}">Catégories <span class="sr-only">(current)</span></a>#}
+{#                        </li>#}
+{#                    </ul>#}
+
+{#                    <ul class="navbar-nav  mt-2 mt-lg-0">#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{{ path("produit_index") }}">Produits <span class="sr-only">(current)</span></a>#}
+{#                        </li>#}
+{#                    </ul>#}
+
+{#                    <ul class="navbar-nav  mt-2 mt-lg-0">#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{{ path("tag_index") }}">Tag <span class="sr-only">(current)</span></a>#}
+{#                        </li>#}
+{#                    </ul>#}
+
+{#                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{{ path("correspondre_index") }}">Correspondre <span class="sr-only">(current)</span></a>#}
+{#                        </li>#}
+{#                    </ul>#}
+
+                <div class="btn-group dropleft">
+                    <button class="btn btn-link" type="button" data-toggle="dropdown" >
+                        <img src="{{ asset('images/menu.png') }}">
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item btn-outline-danger" href="{{ path("accueil") }}">Home</a>
                         {% if not is_granted('ROLE_USER') %}
-                            <a href="{{ path("app_login") }}" class="btn btn-danger">Se connecter</a>
+                            <a class="dropdown-item btn-outline-danger" href="{{ path("app_login") }}">Login</a>
                         {% else %}
-                            <a href="{{ path("app_logout") }}" class="btn btn-danger">Se déconnecter</a>
+                            <a class="dropdown-item btn-outline-danger" href="{{ path("produit_index") }}">Produit</a>
+                            <a class="dropdown-item btn-outline-danger" href="{{ path("app_logout") }}">Logout</a>
+                            <a class="dropdown-item btn-outline-danger" href="{{ path("panier") }}">Panier</a>
                         {% endif %}
-                    </form>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a class="dropdown-item btn-outline-danger" href="{{ path("panel_index") }}">Panel Admin</a>
+                        {% endif %}
+                    </div>
+                </div>
+
+
+{#                    <form class="form my-2 my-lg-0">#}
+{#                        <a href="{{ path("panier") }}" class=""><img src="{{ asset('images/Pani.png') }}"> <span class="bg">{{ app.session.get("total_produits") }}</span></a>#}
+{#                    </form>#}
+
+
+{#                    <form class="form-inline my-2 my-lg-0">#}
+{#                        {% if not is_granted('ROLE_USER') %}#}
+
+{#                            <a href="{{ path("app_login") }}" class="btn btn-danger">Login</a>#}
+{#                        {% else %}#}
+{#                            <a href="{{ path("app_logout") }}" class="btn btn-danger">Se déconnecter</a>#}
+{#                        {% endif %}#}
+{#                    </form>#}
                 </div>
             </nav>
         {% endblock %}

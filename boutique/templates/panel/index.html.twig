@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panel index{% endblock %}
+
+{% block body %}
+
+
+    <table class="table">
+{#        <thead>#}
+{#            <tr>#}
+{#                <th>Id</th>#}
+{#                <th>actions</th>#}
+{#            </tr>#}
+{#        </thead>#}
+        <tbody>
+
+
+        <div class="wrapper">
+            <!-- Sidebar -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3><center>Minecon Shop</center></h3>
+                </div>
+
+                <ul class="list-unstyled components sidebar">
+                    <p><center>Pannel Admin</center></p>
+                    <HR align=center size=10 width="50%" color="#fffffff">
+                    <li>
+                        <a style="color: white" href="{{ path('produit_index')}}">⬦ Produit ↠</a>
+                    </li>
+                    <li>
+                        <a style="color: white" href="#">⬦ Profil ↠</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+{#            <div class="container-fluid">#}
+{#                <div class="navbar-header" >#}
+{#                    <a class="navbar-brand" href="#">Dashboard</a>#}
+{#                </div>#}
+{#                <div class="navbar-header">#}
+{#                    <a class="navbar-brand" href="#">Produit</a>#}
+{#                </div>#}
+
+
+
+
+
+
+{#                <ul class="nav navbar-nav">#}
+{#                    <li class="active"><a href="#">Home</a></li>#}
+{#                    <li class="dropdown">#}
+{#                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1#}
+{#                            <span class="caret"></span></a>#}
+{#                        <ul class="dropdown-menu">#}
+{#                            <li><a href="#">Page 1-1</a></li>#}
+{#                            <li><a href="#">Page 1-2</a></li>#}
+{#                            <li><a href="#">Page 1-3</a></li>#}
+{#                        </ul>#}
+{#                    </li>#}
+{#                    <li><a href="#">Page 2</a></li>#}
+{#                    <li><a href="#">Page 3</a></li>#}
+{#                </ul>#}
+            </div>
+
+{#        {% for panel in panels %}#}
+{#            <tr>#}
+
+{#                <td>#}
+
+{#                </td>#}
+{#            </tr>#}
+{#        {% else %}#}
+{#            <tr>#}
+{#                <td colspan="2">no records found</td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+        </tbody>
+    </table>
+
+{#    <a href="{{ path('panel_new') }}">Create new</a>#}
+{% endblock %}

@@ -2,28 +2,26 @@
 
 namespace App\Form;
 
-use App\Entity\Produit;
+use App\Entity\Contenir;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ProduitType extends AbstractType
+class ContenirType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('libelle')
-            ->add('tarif')
-            ->add('id_categorie')
-            ->add('stock')
-            ->add('image')
+            ->add('quantite')
+            ->add('id_produit')
+            ->add('id_panier')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Produit::class,
+            'data_class' => Contenir::class,
         ]);
     }
 }

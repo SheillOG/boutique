@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PanierController!{% endblock %}
+{% block title %}Panier{% endblock %}
 
 {% block body %}
 <style>
@@ -9,17 +9,60 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/html/boutique/src/Controller/PanierController.php'|file_link(0) }}">src/Controller/PanierController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/html/boutique/templates/panier/index.html.twig'|file_link(0) }}">templates/panier/index.html.twig</a></code></li>
-    </ul>
+{#    <ul>Montant total: {{ app.session.get('montant_total') }}</ul>#}
+{#    {{ dump(panier) }}#}
+{#    {{ dump(montant_total) }}#}
+{#    {{ dump(les_produits) }}#}
 
-    {{ dump(panier) }}
-    {{ dump(montant_total) }}
-    {{ dump(les_produits) }}
+
+        <h1 class="text text-center">Panier</h1>
+
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th>Apperçu</th>
+                <th>Quantite</th>
+                <th>Categorie</th>
+                <th>Nom</th>
+                <th>Prix</th>
+                {% if is_granted('ROLE_ADMIN') %}
+                <th>actions</th>
+                {% endif %}
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for contenir in contenirs %}
+                <tr>
+                    <td><img src="{{ contenir.idproduit.image }}" width="125" height="150"></td>
+                    <td>{{ contenir.quantite }}</td>
+{#                    <td>{{ contenir.idcategorie }}</td>#}
+                    <td><u>{{ contenir.idproduit.libelle }}</u></td>
+                    <td>{{ contenir.idproduit.tarif * contenir.quantite}}€</td>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <td>
+                        <a href="{{ path('contenir_show', {'id': contenir.id}) }}">show</a>
+                        <a href="{{ path('contenir_edit', {'id': contenir.id}) }}">edit</a>
+{#                        <a href="{{ path('contenir/_delete_form.html.twig', {'id': contenir.id}) }}">retirer</a>#}
+                    </td>
+                    {% endif %}
+                    <td>{{ include('contenir/_delete_form.html.twig') }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">Panier vide</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <a>Prix total: <b>{{ panier.montanttotal }}</b>€</a>
+        <button type="button"><a href="{{ path('panier_remove')}}">
+                Vider panier
+            </a></button>
+{#        <a href="{{ path('contenir_new') }}">Create new</a>#}
+
 
 </div>
 {% endblock %}

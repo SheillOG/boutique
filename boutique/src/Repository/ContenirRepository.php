@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Contenir;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**
  * @method Contenir|null find($id, $lockMode = null, $lockVersion = null)
@@ -17,6 +18,22 @@ class ContenirRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Contenir::class);
+    }
+
+
+    /**
+     * @param SessionInterface $session
+     */
+    public function deleteTuples(SessionInterface $session){
+        $queryBuilder = $this->createQueryBuilder('delete');
+        $queryBuilder->delete(Contenir::class, 'c')
+            ->where('c.id_panier = :id')
+            ->setParameter('id', $session->get('panierId') );
+
+        $query = $queryBuilder->getQuery();
+
+        $query->execute();
+
     }
 
     // /**
