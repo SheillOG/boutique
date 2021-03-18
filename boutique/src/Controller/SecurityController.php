@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Contenir;
+use App\Managers\PlaceholderManager;
 use MongoDB\Driver\Session;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,19 +26,21 @@ class SecurityController extends AbstractController
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+        return $this->render('security/login.html.twig', array_merge( PlaceholderManager::load(),
+            ['last_username' => $lastUsername, 'error' => $error]));
     }
 
     /**
      * @Route("/logout", name="app_logout")
      */
-    public function logout(Request $request, Contenir $contenir, Panier $panier)
+    public function logout(Request $request, Contenir $contenir, Panier $panier, Session $session)
     {
         if ($this->isCsrfTokenValid('delete'.$contenir->getId(),$panier->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($contenir);
             $entityManager->remove($panier);
             $entityManager->flush();
+            $session->clear();
         }
 
         return $this->redirectToRoute('panier_index');

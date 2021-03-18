@@ -23,7 +23,6 @@
             <tr>
                 <th>Apperçu</th>
                 <th>Quantite</th>
-                <th>Categorie</th>
                 <th>Nom</th>
                 <th>Prix</th>
                 {% if is_granted('ROLE_ADMIN') %}
@@ -40,27 +39,22 @@
 {#                    <td>{{ contenir.idcategorie }}</td>#}
                     <td><u>{{ contenir.idproduit.libelle }}</u></td>
                     <td>{{ contenir.idproduit.tarif * contenir.quantite}}€</td>
-                    {% if is_granted('ROLE_ADMIN') %}
-                    <td>
-                        <a href="{{ path('contenir_show', {'id': contenir.id}) }}">show</a>
-                        <a href="{{ path('contenir_edit', {'id': contenir.id}) }}">edit</a>
-{#                        <a href="{{ path('contenir/_delete_form.html.twig', {'id': contenir.id}) }}">retirer</a>#}
-                    </td>
-                    {% endif %}
                     <td>{{ include('contenir/_delete_form.html.twig') }}</td>
                 </tr>
             {% else %}
                 <tr>
-                    <td colspan="3">Panier vide</td>
+                    <td colspan="3">Vous n'avez aucun article dans le panier</td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
         <br>
         <a>Prix total: <b>{{ panier.montanttotal }}</b>€</a>
-        <button type="button"><a href="{{ path('panier_remove')}}">
-                Vider panier
-            </a></button>
+        <button type="button"><a href="{{ path('panier_remove')}}">Vider panier</a></button>
+
+        <button type="button"><a href="">Valider le panier</a></button>
+
+
 {#        <a href="{{ path('contenir_new') }}">Create new</a>#}
 
 

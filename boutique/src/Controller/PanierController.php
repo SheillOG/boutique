@@ -5,8 +5,10 @@ namespace App\Controller;
 use App\Entity\Contenir;
 use App\Entity\Panier;
 use App\Entity\Produit;
+use App\Managers\PlaceholderManager;
 use App\Repository\ContenirRepository;
 use App\Repository\PanierRepository;
+use App\Repository\ProduitRepository;
 use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -46,14 +48,14 @@ class PanierController extends AbstractController
             $lesProduits = $manager->getRepository(Contenir::class)->findAll();
         }
 
-        return $this->render('panier/index.html.twig', [
+        return $this->render('panier/index.html.twig', array_merge(PlaceholderManager::load(),[
             'contenirs' => $contenirRepository->findAll(),
             'controller_name' => 'PanierController',
             'panier' => $lePanier,
             'date_creation' => $dateCreation,
             'montant_total' => $montant_total,
-            'les_produits' => $lesProduits
-        ]);
+            'les_produits' => $lesProduits,
+        ]));
     }
 
     /**
@@ -113,6 +115,7 @@ class PanierController extends AbstractController
     {
 
         $lesPaniers = $manager->getRepository(Panier::class)->findAll();
+        $produits = $session->get('les_produits', array());
         if (count($lesPaniers) == 0) {
             //je créé le panier
             $panier = new Panier();
@@ -128,15 +131,18 @@ class PanierController extends AbstractController
         $session->set('panier', $panier);
         $session->set('total_produit', 0);
 
+
         $panier = $manager->getRepository(Panier::class)->find($session->get('panier'));
         $panier->setMontantTotal(0);
         $contenir = $manager->getRepository(Contenir::class);//->find($session->get('panier'));
         $contenir->deleteTuples($session);
-//        $session->clear();
+        $session->remove('les_produits', $produits);
+        $contenir->clear();
         $manager->flush();
         return $this->redirectToRoute('panier');
 
     }
+
 }
 
 

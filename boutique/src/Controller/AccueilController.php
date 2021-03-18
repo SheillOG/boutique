@@ -2,20 +2,23 @@
 
 namespace App\Controller;
 
+use App\Repository\ProduitRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Managers\PlaceholderManager;
 
 class AccueilController extends AbstractController
 {
     /**
      * @Route("/", name="accueil")
      */
-    public function index(): Response
+    public function index(ProduitRepository $produitRepository): Response
     {
-        return $this->render('accueil/index.html.twig', [
-            'controller_name' => 'AccueilController',
-'datedujour' => 'jour 3'
-        ]);
+
+        return $this->render('accueil/index.html.twig', array_merge(
+            PlaceholderManager::load(),
+            ['controller_name' => 'AccueilController', "produits" => $produitRepository->findAll()]
+        ));
     }
 }

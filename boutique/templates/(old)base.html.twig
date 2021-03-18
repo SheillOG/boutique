@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="images/favicon.ico">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+
+        {% block head_css %}
+            <link rel="stylesheet" href="{{ asset('style.css') }}">
+            <link rel="stylesheet" href="{{ asset('accueil.css') }}">
+            <link rel="stylesheet" href="{{ asset('produit.css') }}">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+            <link href='http://fonts.googleapis.com/css?family=Bebas+Neue' rel='stylesheet' type='text/css'>
+            <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+
+        {% endblock %}
+        {% block head_js %}
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        {% endblock %}
+
+    </head>
+    <body style="background-color: #FFFFFF" >
+        {% block navbar %}
+            <nav class="navbar navbar-expand-lg navbar-light shadow p-3" style="background-color: #FFFFFF">
+
+                <img src="{{ asset('images/logo.png') }}" width="60" height="60" style="margin-left: 10em;">
+
+                    <a class="navbar-brand" href="{{ path("accueil") }}" style="font-family: {{ _font }}; font-size: {{ _fontsize }}">{{ _title }}</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+
+
+
+
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+                </ul>
+
+                <div class="btn-group dropleft">
+
+
+
+                    <ul class="navbar-nav "style="margin-right: 10em;">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path("accueil") }}">{{ _nav1 }} <span class="sr-only">(current)</span></a>
+                        </li>
+                        {% if not is_granted('ROLE_USER') %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path("app_login") }}">{{ _nav2 }}</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path("produit_index") }}">{{ _nav3 }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path("panier") }}">{{ _nav4 }}</a>
+                        </li>
+                        <button class="seco">
+                            <a class="nav-link" href="{{ path("app_logout") }}">{{ _nav5 }}</a>
+                        </button>
+                    </ul>
+                    {% endif %}
+
+{#                    <button class="btn btn-link" type="button" data-toggle="dropdown" >
+                        <img src="{{ asset('images/menu.png') }}">
+                    </button>#}
+
+                    {#<div class="dropdown-menu">
+                        <a class="dropdown-item btn-outline-danger" href="{{ path("accueil") }}">Home</a>
+                        {% if not is_granted('ROLE_USER') %}
+                            <a class="dropdown-item btn-outline-danger" href="{{ path("app_login") }}">Login</a>
+                        {% else %}
+                            <a class="dropdown-item btn-outline-danger" href="{{ path("produit_index") }}">Produit</a>
+                            <a class="dropdown-item btn-outline-danger" href="{{ path("app_logout") }}">Logout</a>
+                            <a class="dropdown-item btn-outline-danger" href="{{ path("panier") }}">Panier</a>
+                        {% endif %}
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a class="dropdown-item btn-outline-danger" href="{{ path("panel_index") }}">Panel Admin</a>
+                        {% endif %}
+                    </div>#}
+                </div>
+
+
+{#                    <form class="form my-2 my-lg-0">#}
+{#                        <a href="{{ path("panier") }}" class=""><img src="{{ asset('images/Pani.png') }}"> <span class="bg">{{ app.session.get("total_produits") }}</span></a>#}
+{#                    </form>#}
+
+
+{#                    <form class="form-inline my-2 my-lg-0">#}
+{#                        {% if not is_granted('ROLE_USER') %}#}
+
+{#                            <a href="{{ path("app_login") }}" class="btn btn-danger">Login</a>#}
+{#                        {% else %}#}
+{#                            <a href="{{ path("app_logout") }}" class="btn btn-danger">Se déconnecter</a>#}
+{#                        {% endif %}#}
+{#                    </form>#}
+                </div>
+            </nav>
+        {% endblock %}
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+
+    </body>
+</html>
+
+<style>
+    .seco {
+        border-radius: 10px;
+        border: 1px solid #E4D7C0;
+        background-color: #E4D7C0;
+        color: #FFFFFF;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        transition: transform 80ms ease-in;
+    }
+</style>

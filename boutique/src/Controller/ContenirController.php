@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Contenir;
 use App\Form\ContenirType;
+use App\Managers\PlaceholderManager;
 use App\Repository\ContenirRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,9 +21,9 @@ class ContenirController extends AbstractController
      */
     public function index(ContenirRepository $contenirRepository): Response
     {
-        return $this->render('contenir/index.html.twig', [
-            'contenirs' => $contenirRepository->findAll(),
-        ]);
+        return $this->render('contenir/index.html.twig', array_merge( PlaceholderManager::load(),
+            ['contenirs' => $contenirRepository->findAll(),
+        ]));
     }
 
     /**
@@ -53,9 +54,10 @@ class ContenirController extends AbstractController
      */
     public function show(Contenir $contenir): Response
     {
-        return $this->render('contenir/show.html.twig', [
+        return $this->render('contenir/show.html.twig', array_merge(PlaceholderManager::load(),
+        [
             'contenir' => $contenir,
-        ]);
+        ]));
     }
 
     /**

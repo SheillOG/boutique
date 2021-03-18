@@ -1,71 +1,196 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Produit disponible{% endblock %}
+{% block title %}Produit{% endblock %}
 
 {% block body %}
+
+
     <style>
-        .example-wrapper { margin: auto; max-width: 1500px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper { margin: auto; max-width: 1500px; width: 95%; font: 17px/1.5 sans-serif; }
+
+        h1{
+            margin-top: 10px;
+        }
     </style>
 
-    <div class="example-wrapper">
-        {% if is_granted('ROLE_ADMIN') %}
-            <h1 class="text text-center"><u>Panel Produit Admin</u></h1>
-        {% endif %}
-        <h1 class="text text-center">Cape Minecon</h1>
+{#Panel Gestion Produit Admin#}
 
-        <table class="table">
-            <thead class="thead-dark">
-            <tr>
-                {% if is_granted('ROLE_ADMIN') %}
-                <th>Id</th>
-                <th>Categorie</th>
-                {% endif %}
-                <th>Categorie</th>
-                <th>Produit</th>
-                <th>Tarif</th>
-                <th>Stock</th>
-                <th>Couleur</th>
-                {% if is_granted('ROLE_ADMIN') %}
-                <th>actions</th>
-                {% endif %}
-                {% if is_granted('ROLE_USER') %}
-                <th>Ajout</th>
-                {% endif %}
-            </tr>
-            </thead>
-            <tbody>
-            {% for produit in produits %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="example-wrapper">
+            {% if is_granted('ROLE_ADMIN') %}
+                <h1 class="text text-center"><u>Panel Produit Admin</u></h1>
+            {% endif %}
+            <h1 class="text text-center">Cape Minecon</h1>
+
+            <table class="table">
+                <thead class="thead-dark">
                 <tr>
                     {% if is_granted('ROLE_ADMIN') %}
-                        <td>{{ produit.id }}</td>
+                    <th>Id</th>
+                    <th>Categorie</th>
                     {% endif %}
-                        <td>{{ produit.idcategorie }}</td>
-                        <td><u>{{ produit.libelle }}</u></td>
-                        <td>{{ produit.tarif }}</td>
-                        <td>{{ produit.stock }}</td>
-                        <td><img src="{{ asset('')~produit.image }}" width="150" height="200"></td>
+                    <th>Produit</th>
+                    <th>Tarif</th>
+                    <th>Stock</th>
+                    <th>Cape</th>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <th>Actions</th>
+                    {% endif %}
+                    {% if is_granted('ROLE_USER') %}
+                    <th>Ajout</th>
+                    {% endif %}
+                </tr>
+                </thead>
+                <tbody>
+                {% for produit in produits %}
+                    <tr>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <td>{{ produit.id }}</td>
+                        {% endif %}
+                            <td>{{ produit.idcategorie }}</td>
+                            <td><u>{{ produit.libelle }}</u></td>
+                            <td>{{ produit.tarif }}</td>
+                            <td>{{ produit.stock }}</td>
+                            <td><img src="{{ asset('')~produit.image }}" width="150" height="200"></td>
+                            <td>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                <a href="{{ path('produit_show', {'id': produit.id}) }}"class = 'btn btn-info'>show</a>
+                                <a href="{{ path('produit_edit', {'id': produit.id}) }}"class = 'btn btn-warning'>edit</a>
+                                {% endif %}
+
+                            </td>
                         <td>
-                            {% if is_granted('ROLE_ADMIN') %}
-                            <a href="{{ path('produit_show', {'id': produit.id}) }}"class = 'btn btn-info'>show</a>
-                            <a href="{{ path('produit_edit', {'id': produit.id}) }}"class = 'btn btn-warning'>edit</a>
-                            {% endif %}
-                            <a href="{{ path('panier_add', {'id': produit.id}) }}"class = 'btn btn-danger'> +</a>
+                            <a href="{{ path('panier_add', {'id': produit.id}) }}" class = 'btn btn-danger'> +</a>
                         </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="4">no records found</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="4">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
 
 
 
-        <a href="{{ path('produit_new') }}">Create new</a>
+            <a href="{{ path('produit_new') }}">Create new</a>
 
-    </div>
+        </div>
+    {% endif %}
+    {% if is_granted('ROLE_USER') %}
+        <style>
+            @import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);
+        </style>
+
+        <div class="min-w-screen min-h-screen bg-gray-100 px-5 py-5">
+            <div class="w-full mx-auto bg-white px-5 py-10 text-gray-600 mb-10">
+                <div class="max-w-5xl mx-auto md:flex">
+                    <div class="md:w-1/4 md:flex md:flex-col">
+                        <div class="text-left w-full flex-grow md:pr-5">
+                            <h1 class="text-3xl font-bold mb-5">Compte Spotify</h1>
+                            <h3 class="text-md font-medium mb-5">Voici la liste de nos différents plans</h3>
+                        </div>
+                        <div class="w-full mb-2">
+                            <p class="text-xs">*Voir les conditions</p>
+                        </div>
+                    </div>
+                    <div class="md:w-3/4">
+                        <div class="max-w-4xl mx-auto md:flex">
+                            <div class="w-full md:w-1/3 md:max-w-none bg-white px-8 md:px-10 py-8 md:py-10 mb-3 mx-auto md:my-2 rounded-md shadow-lg shadow-gray-600 md:flex md:flex-col">
+                                <div class="w-full flex-grow">
+                                    <h2 class="text-center font-bold uppercase mb-4">Compte premium public</h2>
+                                    <h3 class="text-center font-bold text-4xl mb-5">0.50€<span class="text-sm">/mois</span></h3>
+                                    <ul class="text-sm mb-8">
+                                        <li class="leading-tight"><i class="mdi mdi-check-bold text-lg"></i> Compte partager avec d'autres utilisateurs</li>
+                                        <li class="leading-tight"><i class="mdi mdi-check-bold text-lg"></i> Ecoute illimité</li>
+                                    </ul>
+                                </div>
+                                <div class="w-full">
+                                    <button class="font-bold bg-gray-600 hover:bg-gray-700 text-white rounded-md px-10 py-2 transition-colors w-full">Acheter</button>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/3 md:max-w-none bg-white px-8 md:px-10 py-8 md:py-10 mb-3 mx-auto md:my-2 rounded-md shadow-lg shadow-gray-600 md:flex md:flex-col">
+                                <div class="w-full flex-grow">
+                                    <h2 class="text-center font-bold uppercase mb-4">Compte premium partager</h2>
+                                    <h3 class="text-center font-bold text-4xl md:text-5xl mb-5">1.00€<span class="text-sm">/mois</span></h3>
+                                    <ul class="text-sm mb-8">
+                                        <li class="leading-tight"><i class="mdi mdi-check-bold text-lg"></i> Compte partager avec 1/2 autres utilisateurs</li>
+                                        <li class="leading-tight"><i class="mdi mdi-check-bold text-lg"></i> Ecoute illimité</li>
+                                        <li class="leading-tight"><i class="mdi mdi-check-bold text-lg"></i> Garantie du compte pendant 72H</li>
+                                    </ul>
+                                </div>
+                                <div class="w-full">
+                                    <button class="font-bold bg-gray-600 hover:bg-gray-700 text-white rounded-md px-10 py-2 transition-colors w-full">Acheter</button>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/3 md:max-w-none bg-white px-8 md:px-10 py-8 md:py-10 mb-3 mx-auto md:my-2 rounded-md shadow-lg shadow-gray-600 md:flex md:flex-col">
+                                <div class="w-full flex-grow">
+                                    <h2 class="text-center font-bold uppercase mb-4">Compte premium personnel</h2>
+                                    <h3 class="text-center font-bold text-4xl mb-5">2.50<span class="text-sm">/mois</span></h3>
+                                    <ul class="text-sm mb-8">
+                                        <li class="leading-tight"><i class="mdi mdi-check-bold text-lg"></i> Compte personnel non partager avec d'autres utilisateurs</li>
+                                        <li class="leading-tight"><i class="mdi mdi-check-bold text-lg"></i> Ecoute illimité</li>
+                                        <li class="leading-tight"><i class="mdi mdi-check-bold text-lg"></i> Garantie du compte pendant 72h</li>
+                                    </ul>
+                                </div>
+                                <div class="w-full">
+                                    <button class="font-bold bg-gray-600 hover:bg-gray-700 text-white rounded-md px-10 py-2 transition-colors w-full">Acheter</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
+
+    {# <style>
+            .titre{
+                font-size: {{ _fontsizetitle }};
+                font-family: {{ _fonttitle }};
+            }
+        </style>
+
+        <p class="titre">Minecon Accounts</p>
+
+
+        <div class="container" >
+
+            <div class="row text-center">
+                <p class="col-2 nom"><a href="{{ path('produit_show', {'id': 1}) }}"> <img src="{{ asset('images/Minecon1.png') }}" class="rounded img-fluid"
+                                                                                           alt="Minecon 2011" style="background-color: {{ _colorbgshow }}"> </a> <br/>Minecon 2011 <br/><a style="color:#c12c2c; font-size: 20px">€150 </a><s><FONT
+                                size="4pt">€200</FONT></s></p>
+
+
+                </a>
+
+                <p class="col-2 nom"><a href="{{ path('produit_show', {'id': 2}) }}"><img src="{{ asset('images/Minecon2.png') }}" class="rounded img-fluid "
+                                                                                          alt="Minecon 2012" style="background-color: {{ _colorbgshow }}"></a> <br> Minecon 2012 <br><a style="color:#C12C2C; font-size: 20px">€190 </a><s><FONT
+                                size="2pt">€230</FONT></s></p>
+                <p class="col-2 nom"><a href="{{ path('produit_show', {'id': 3}) }}"><img src="{{ asset('images/Minecon3.png') }}" class="rounded img-fluid "
+                                                                                          alt="Minecon 2013" style="background-color: {{ _colorbgshow }}"></a> <br> Minecon 2013 <br><a style="color:#C12C2C; font-size: 20px">€250 </a><s><FONT
+                                size="2pt">€320</FONT></s></p>
+                <p class="col-2 nom"><a href="{{ path('produit_show', {'id': 4}) }}"><img src="{{ asset('images/Minecon4.png') }}" class="rounded img-fluid "
+                                                                                          alt="Minecon 2015" style="background-color: {{ _colorbgshow }}"></a> <br> Minecon 2015 <br><a style="color:#C12C2C; font-size: 20px">€210 </a><s><FONT
+                                size="2pt">€290</FONT></s></p>
+                <p class="col-2 nom"><a href="{{ path('produit_show', {'id': 5}) }}"><img src="{{ asset('images/Minecon5.png') }}" class="rounded img-fluid "
+                                                                                          alt="Minecon 2016" style="background-color: {{ _colorbgshow }}"></a> <br> Minecon 2016 <br><a style="color:#C12C2C; font-size: 20px">€120 </a><s><FONT
+                                size="2pt">€170</FONT></s></p>
+                <p class="col-2 nom"><a href="{{ path('produit_show', {'id': 6}) }}"><img src="{{ asset('images/Minecon6.png') }}" class="rounded img-fluid "
+                                                                                          alt="Cobalt" style="background-color: {{ _colorbgshow }}"></a> <br> Minecon Cobalt <br><a style="color:#C12C2C; font-size: 20px">€270 </a><s><FONT
+                                size="2pt">€350</FONT></s></p>
+
+
+            </div>
+        </div>
+#}
+
+
+
+
+
+
+    {% endif %}
 
 {% endblock %}

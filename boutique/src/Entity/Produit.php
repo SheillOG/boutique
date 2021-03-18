@@ -43,6 +43,11 @@ class Produit
      */
     private $image;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $description;
+
     public function getImage(): ?string
     {
         return $this->image;
@@ -103,5 +108,17 @@ class Produit
 
     public function __toString(){
         return $this->libelle;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
     }
 }

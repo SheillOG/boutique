@@ -1,113 +1,79 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Minecon Cape Account Shop{% endblock %}
+{% block title %}{{ _name }}{% endblock %}
 
 {% block body %}
     <style>
-        .example-wrapper {
-            margin: 1em auto;
-            max-width: 800px;
-            width: 95%;
-            font: 18px/1.5 sans-serif;
-        }
-
-        .example-wrapper code {
-            background: #F5F5F5;
-            padding: 2px 6px;
+        .titre{
+            font-size: {{ _fontsizetitle }};
+            font-family: {{ _fonttitle }};
         }
     </style>
 
-{#    <div class="container" >#}
+    <p class="titre">{{ _title }}</p>
+    <br>
+    <br>
 
-{#        <div class="row" >#}
-{#            <div class="col-12" >#}
-{#                <div class="jumbotron" style="background-color:#ea9f9f;"> #}
-{#                    <div class="text text-center">#}
-{#                        <a style="color:#ffffff"><u>PROMOTION DE NOEL -35%</u></a>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
+{#    <div class="flex items-center">
+        <span class="inline-grid grid-cols-3 gap-x-4">
+        <span><img src="https://imgur.com/r9lSRTe.png" /></span>
+        <span><img src="https://imgur.com/6udMVPP.png" /></span>
+        <span><img src="https://imgur.com/5l8VvAX.png" /></span>
+        </span>
+    </div>#}
 
-    <div class="container" >
 
-        <div class="row" >
-            <div class="col-12" >
-                <div class="jumbotron" style="background-color:#ea9f9f;">
-                    <div class="text text-center">
-                        <a style="color:#ffffff"><u>Satisfait ou remboursé</u></a>
+
+
+
+    {% for produit in produits %}
+        <tr>
+{#                <td>{{ produit.id }}</td>
+            <td>{{ produit.idcategorie }}</td>#}
+
+            <!-- This is an example component -->
+            <main class="px-3">
+
+                <div class="item-center m-4">
+                    <div class="bg-white">
+{#                        <img src="{{ asset('')~produit.image }}" alt="" class="w-full h-48 sm:h-56 object-cover" />#}
+                        <img src="{{ produit.image }}" alt="" class="w-full h-48 sm:h-56 object-cover" />
+                        <div class="px-10 py-6 mb-10 text-center">
+                            <div class="text-2xl font-bold text-gray-600-500 mb-4 produitlibelle">{{ produit.libelle }}</div>
+                            <span class="text-sm">
+                            {#Prix: {{ produit.tarif }}
+                            Catégorie: {{ produit.idcategorie }}#}
+                            {{ produit.description }}
+            </span><br>
+                            <button class="m-4 w-80 text-lg h-16 text-white font-extrabold bg-gray-600">Voir le produit</button>
+                        </div>
+
+{#                        <button class="w-full text-lg h-16 text-white font-extrabold bg-gray-600">Voir le produit</button>#}
                     </div>
+
+
                 </div>
-            </div>
-        </div>
+            </main>
 
-        <div class="row text-center">
-                <p class="col-2"><a href="{{ path('produit_show', {'id': 1}) }}"> <img src="{{ asset('images/Minecon1.png') }} " class="rounded img-fluid"
-                                      alt="Minecon 2011"> </a> <br/>Minecon 2011 <br/><a style="color:#c12c2c">€150 </a><s><FONT
-                                size="2pt">€200</FONT></s></p>
-            </a>
-
-            <p class="col-2"><a href="{{ path('produit_show', {'id': 2}) }}"><img src="{{ asset('images/Minecon2.png') }}" class="rounded img-fluid "
-                                                                       alt="Minecon 2012"></a> <br> Minecon 2012 <br><a style="color:#C12C2C">€190 </a><s><FONT
-                            size="2pt">€230</FONT></s></p>
-            <p class="col-2"><a href="{{ path('produit_show', {'id': 3}) }}"><img src="{{ asset('images/Minecon3.png') }}" class="rounded img-fluid "
-                                                                       alt="Minecon 2013"></a> <br> Minecon 2013 <br><a style="color:#C12C2C">€250 </a><s><FONT
-                            size="2pt">€320</FONT></s></p>
-            <p class="col-2"><a href="{{ path('produit_show', {'id': 4}) }}"><img src="{{ asset('images/Minecon4.png') }}" class="rounded img-fluid "
-                                                                       alt="Minecon 2015"></a> <br> Minecon 2015 <br><a style="color:#C12C2C">€210 </a><s><FONT
-                            size="2pt">€290</FONT></s></p>
-            <p class="col-2"><a href="{{ path('produit_show', {'id': 5}) }}"><img src="{{ asset('images/Minecon5.png') }}" class="rounded img-fluid "
-                                  alt="Minecon 2016"></a> <br> Minecon 2016 <br><a style="color:#C12C2C">€120 </a><s><FONT
-                            size="2pt">€170</FONT></s></p>
-            <p class="col-2"><a href="{{ path('produit_show', {'id': 6}) }}"><img src="{{ asset('images/Minecon6.png') }}" class="rounded img-fluid "
-                                  alt="Cobalt"></a> <br> Cobalt <br><a style="color:#C12C2C">€270 </a><s><FONT
-                            size="2pt">€350</FONT></s></p>
-
-
-        </div>
+    {% endfor %}
 
 
 
-{#        <div class="row">#}
-{#            {% for i in 1..6 %}#}
-{#                <div class="col">#}
-{#                    <img src="{{ asset('images/Minecon'~i~'.png') }}" class="rounded img-fluid">#}
-{#                </div>#}
-{#            {% endfor %}#}
-{#        </div>#}
 
 
 
-    </div>
-    {% if is_granted('ROLE_ADMIN') %}
-        <table class="table">
-            <tbody>
-            <div class="wrapper">
-                <!-- Sidebar -->
-                <nav id="sidebar">
-                    <div class="sidebar-header">
-                        <br>
-                        <h3><center>Minecon Shop</center></h3>
-                    </div>
 
-                    <ul class="list-unstyled components sidebar">
-                        <p><center><u>Panel Admin</u></center></p>
-                        <HR align=center size=10 width="50%" color="#fffffff">
-                        <li>
-                            <a style="color: white" href="{{ path('produit_index')}}">⬦ Produit ↠</a>
-                        </li>
-                        <li>
-                            <a style="color: white" href="#">⬦ Profil ↠</a>
-                        </li>
 
-                    </ul>
 
-                </nav>
-            </div>
-            </tbody>
-        </table>
-    {% endif %}
+
+
+
+
+
+
+
 
 
 
 {% endblock %}
+

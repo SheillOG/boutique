@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ _name }}{% endblock %}
+
+{% block body %}
+    <style>
+        .titre{
+            font-size: {{ _fontsizetitle }};
+            font-family: {{ _fonttitle }};
+        }
+    </style>
+{#    <div class="container" >#}
+
+{#        <div class="row" >#}
+{#            <div class="col-12" >#}
+{#                <div class="jumbotron" style="background-color:#ea9f9f;"> #}
+{#                    <div class="text text-center">#}
+{#                        <a style="color:#ffffff"><u>PROMOTION DE NOEL -35%</u></a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+
+{#    <div class="test">
+            <img src="{{ asset('images/background.png') }}" style=" sm:w-0.5 w-2; md: 76px;">
+
+    </div>#}
+    <p class="titre">Minecon Accounts</p>
+
+
+    <div class="container" >
+
+        <div class="row text-center">
+            <p class="col-2 nom"><a href="{{ path('produit_show', {'id': 1}) }}"> <img src="{{ asset('images/Minecon1.png') }}" class="rounded img-fluid"
+            alt="Minecon 2011" style="background-color: {{ _colorbgshow }}"> </a> <br/>Minecon 2011 <br/></p>
+
+
+            </a>
+
+            <p class="col-2 nom"><a href="{{ path('produit_show', {'id': 2}) }}"><img src="{{ asset('images/Minecon2.png') }}" class="rounded img-fluid "
+                                                                       alt="Minecon 2012" style="background-color: {{ _colorbgshow }}"></a> <br> Minecon 2012 <br><a style="color:#C12C2C; font-size: 20px">€190 </a><s><FONT
+                            size="2pt">€230</FONT></s></p>
+            <p class="col-2 nom"><a href="{{ path('produit_show', {'id': 3}) }}"><img src="{{ asset('images/Minecon3.png') }}" class="rounded img-fluid "
+                                                                       alt="Minecon 2013" style="background-color: {{ _colorbgshow }}"></a> <br> Minecon 2013 <br><a style="color:#C12C2C; font-size: 20px">€250 </a><s><FONT
+                            size="2pt">€320</FONT></s></p>
+            <p class="col-2 nom"><a href="{{ path('produit_show', {'id': 4}) }}"><img src="{{ asset('images/Minecon4.png') }}" class="rounded img-fluid "
+                                                                       alt="Minecon 2015" style="background-color: {{ _colorbgshow }}"></a> <br> Minecon 2015 <br><a style="color:#C12C2C; font-size: 20px">€210 </a><s><FONT
+                            size="2pt">€290</FONT></s></p>
+            <p class="col-2 nom"><a href="{{ path('produit_show', {'id': 5}) }}"><img src="{{ asset('images/Minecon5.png') }}" class="rounded img-fluid "
+                                  alt="Minecon 2016" style="background-color: {{ _colorbgshow }}"></a> <br> Minecon 2016 <br><a style="color:#C12C2C; font-size: 20px">€120 </a><s><FONT
+                            size="2pt">€170</FONT></s></p>
+            <p class="col-2 nom"><a href="{{ path('produit_show', {'id': 6}) }}"><img src="{{ asset('images/Minecon6.png') }}" class="rounded img-fluid "
+                                  alt="Cobalt" style="background-color: {{ _colorbgshow }}"></a> <br> Minecon Cobalt <br><a style="color:#C12C2C; font-size: 20px">€270 </a><s><FONT
+                            size="2pt">€350</FONT></s></p>
+
+
+        </div>
+
+
+
+
+
+{#        <div class="row">#}
+{#            {% for i in 1..6 %}#}
+{#                <div class="col">#}
+{#                    <img src="{{ asset('images/Minecon'~i~'.png') }}" class="rounded img-fluid">#}
+{#                </div>#}
+{#            {% endfor %}#}
+{#        </div>#}
+
+
+
+    </div>
+
+
+
+{% endblock %}
+

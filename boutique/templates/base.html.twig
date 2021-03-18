@@ -4,105 +4,100 @@
         <meta charset="UTF-8">
         <link rel="icon" href="images/favicon.ico">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+        {% endblock %}
 
         {% block head_css %}
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
             <link rel="stylesheet" href="{{ asset('style.css') }}">
+            <link rel="stylesheet" href="{{ asset('accueil.css') }}">
+            <link rel="stylesheet" href="{{ asset('produit.css') }}">
+            <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+            <link href='http://fonts.googleapis.com/css?family=Bebas+Neue' rel='stylesheet' type='text/css'>
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
         {% endblock %}
         {% block head_js %}
             <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
         {% endblock %}
 
     </head>
-    <body style="background-color:#ffffff" >
+    <body style="background-color: #FFFFFF" >
         {% block navbar %}
-            <nav class="navbar navbar-expand-lg navbar-light " style="background-color:#d8d8d8">
-                <img src="{{ asset('images/icon.png') }}" width="60" height="60">
-                <a class="navbar-brand" href="{{ path("accueil") }}">Minecon Shop</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-                        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-
-
-
-
-{#                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">#}
-{#                    <ul class="navbar-nav  mt-2 mt-lg-0">#}
-{#                        <li class="nav-item active">#}
-{#                            <a class="nav-link" href="{{ path("accueil") }}">Accueil <span class="sr-only">(current)</span></a>#}
-{#                        </li>#}
-{#                    </ul>#}
-
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                </ul>
-
-{#                    <ul  class="navbar-nav  mt-2 mt-lg-0">#}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link" href="{{ path("categorie_index") }}">Catégories <span class="sr-only">(current)</span></a>#}
-{#                        </li>#}
-{#                    </ul>#}
-
-{#                    <ul class="navbar-nav  mt-2 mt-lg-0">#}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link" href="{{ path("produit_index") }}">Produits <span class="sr-only">(current)</span></a>#}
-{#                        </li>#}
-{#                    </ul>#}
-
-{#                    <ul class="navbar-nav  mt-2 mt-lg-0">#}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link" href="{{ path("tag_index") }}">Tag <span class="sr-only">(current)</span></a>#}
-{#                        </li>#}
-{#                    </ul>#}
-
-{#                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">#}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link" href="{{ path("correspondre_index") }}">Correspondre <span class="sr-only">(current)</span></a>#}
-{#                        </li>#}
-{#                    </ul>#}
-
-                <div class="btn-group dropleft">
-                    <button class="btn btn-link" type="button" data-toggle="dropdown" >
-                        <img src="{{ asset('images/menu.png') }}">
+            <header class="shadow-lg">
+                <a class="logo" href="{{ path("accueil") }}"><img src="https://imgur.com/WO4c3Rp.png" alt="logo"></a>
+                <nav>
+                    <ul class="nav__links">
+                        <li><a href="{{ path("accueil") }}">Accueil</a></li>
+                        <li><a href="{{ path("produit_index") }}">Produits</a></li>
+                        <li><a href="{{ path("panier") }}">Panier</a></li>
+                    </ul>
+                </nav>
+                <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                    <button @click="open = !open" class="flex flex-row text-gray-900 bg-gray-200 items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+                        <span>Services</span>
+                        <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item btn-outline-danger" href="{{ path("accueil") }}">Home</a>
-                        {% if not is_granted('ROLE_USER') %}
-                            <a class="dropdown-item btn-outline-danger" href="{{ path("app_login") }}">Login</a>
-                        {% else %}
-                            <a class="dropdown-item btn-outline-danger" href="{{ path("produit_index") }}">Produit</a>
-                            <a class="dropdown-item btn-outline-danger" href="{{ path("app_logout") }}">Logout</a>
-                            <a class="dropdown-item btn-outline-danger" href="{{ path("panier") }}">Panier</a>
-                        {% endif %}
-                        {% if is_granted('ROLE_ADMIN') %}
-                            <a class="dropdown-item btn-outline-danger" href="{{ path("panel_index") }}">Panel Admin</a>
-                        {% endif %}
+                    <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full md:max-w-screen-sm md:w-screen mt-2 origin-top-right">
+                        <div class="px-2 pt-2 pb-4 bg-white rounded-md shadow-lg dark-mode:bg-gray-700">
+{#                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">#}
+                                <a class="flex flex row items-start rounded-lg bg-transparent p-2 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
+
+
+                                    <div class="bg-teal-500 text-white rounded-lg p-3">
+                                        <img src="https://imgur.com/kDXIz7u.png">
+                                    </div>
+
+
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Spotify</p>
+                                        <p class="text-sm">Compte Spotify à -20%</p>
+                                    </div>
+                                </a>
+
+                                <a class="flex flex row items-start rounded-lg bg-transparent p-2 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
+                                    <div class="bg-teal-500 text-white rounded-lg p-3">
+                                        <img src="https://imgur.com/QStQWiw.png">
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Deezer</p>
+                                        <p class="text-sm">Compte Deezer à -20%</p>
+                                    </div>
+                                </a>
+
+                                <a class="flex flex row items-start rounded-lg bg-transparent p-2 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
+                                    <div class="bg-teal-500 text-white rounded-lg p-3">
+                                        <img src="https://imgur.com/2qsIqgT.png">
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Netflix</p>
+                                        <p class="text-sm">Compte Netflix à -20%</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-
-{#                    <form class="form my-2 my-lg-0">#}
-{#                        <a href="{{ path("panier") }}" class=""><img src="{{ asset('images/Pani.png') }}"> <span class="bg">{{ app.session.get("total_produits") }}</span></a>#}
-{#                    </form>#}
-
-
-{#                    <form class="form-inline my-2 my-lg-0">#}
-{#                        {% if not is_granted('ROLE_USER') %}#}
-
-{#                            <a href="{{ path("app_login") }}" class="btn btn-danger">Login</a>#}
-{#                        {% else %}#}
-{#                            <a href="{{ path("app_logout") }}" class="btn btn-danger">Se déconnecter</a>#}
-{#                        {% endif %}#}
-{#                    </form>#}
+                {% if not is_granted('ROLE_USER') %}
+                <a class="cta" href="{{ path("app_login") }}">Se connecter</a>
+                {% else %}
+                <a class="cta" href="{{ path("app_logout") }}">Se deconnecter</a>
+                {% endif %}
+            </header>
+            <div id="mobile__menu" class="overlay">
+                <a class="close">&times;</a>
+                <div class="overlay__content">
+                    <a href="#">Services</a>
+                    <a href="#">Projects</a>
+                    <a href="#">About</a>
                 </div>
-            </nav>
+            </div>
+            <script type="text/javascript" src="mobile.js"></script>
         {% endblock %}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
 
     </body>
 </html>
+

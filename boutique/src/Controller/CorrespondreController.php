@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Correspondre;
 use App\Form\CorrespondreType;
+use App\Managers\PlaceholderManager;
 use App\Repository\CorrespondreRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,9 +21,9 @@ class CorrespondreController extends AbstractController
      */
     public function index(CorrespondreRepository $correspondreRepository): Response
     {
-        return $this->render('correspondre/index.html.twig', [
-            'correspondres' => $correspondreRepository->findAll(),
-        ]);
+        return $this->render('correspondre/index.html.twig', array_merge(PlaceholderManager::load(),
+            ['correspondres' => $correspondreRepository->findAll(),
+        ]));
     }
 
     /**
@@ -53,9 +54,9 @@ class CorrespondreController extends AbstractController
      */
     public function show(Correspondre $correspondre): Response
     {
-        return $this->render('correspondre/show.html.twig', [
-            'correspondre' => $correspondre,
-        ]);
+        return $this->render('correspondre/show.html.twig', array_merge(PlaceholderManager::load(),
+            ['correspondre' => $correspondre
+        ]));
     }
 
     /**
