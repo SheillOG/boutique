@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <link>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<div>
+    <input type="text" name="identifiant" id="identifiant" value=""/>
+    <span id="erreurIdentifiant"></span>
+    <button>Tester</button>
+</div>
+
+<div>
+    <input type="text" name="mdp" id="mdp" value=""/>
+    <span id="erreurMail"></span>
+
+</div>
+<script>
+$(document).ready(function() {
+//capture de l'événement keyup
+$("#identifiant").keyup(function(){
+//exéction du script verifId à chaque fois que l'on presse une touche
+$.ajax({
+type:"post",
+url: 'verifId.php',
+data:"identifiant="+$(this).val(),
+success: function(data) {
+//data contient la valeur affichée par le script php
+if (data=="idUtilise"){
+$("#erreur").html("Identifiant déjà utilisé");
+$("#erreur").css("color","red");
+}else{
+$("#erreur").html("Identifiant disponible");
+$("#erreur").css("color","green");
+};
+}
+});
+});
+});
+</script>
+<script src="saisie.js"></script>
+
+</body>
+</html>
+
+
