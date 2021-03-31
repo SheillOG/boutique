@@ -44,8 +44,9 @@
                             {#Prix: {{ produit.tarif }}
                             Catégorie: {{ produit.idcategorie }}#}
                             {{ produit.description }}
+                                {{ produit.tarif }}€
             </span><br>
-                            <button class="m-4 w-80 text-lg h-16 text-white font-extrabold bg-gray-600">Voir le produit</button>
+                            <button class="m-4 w-60 text-lg h-16 text-white font-extrabold bg-gray-600">{{ _voirproduit }}</button>
                         </div>
 
 {#                        <button class="w-full text-lg h-16 text-white font-extrabold bg-gray-600">Voir le produit</button>#}
@@ -56,15 +57,6 @@
             </main>
 
     {% endfor %}
-
-
-
-
-
-
-
-
-
 
 
 

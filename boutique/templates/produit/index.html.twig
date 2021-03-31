@@ -78,29 +78,22 @@
         </div>
     {% endif %}
     {% if is_granted('ROLE_USER') %}
+
         <style>
             @import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);
         </style>
+    {% endif %}
 
-        <div class="min-w-screen min-h-screen bg-gray-100 px-5 py-5">
-            <div class="w-full mx-auto bg-white px-5 py-10 text-gray-600 mb-10">
-                <div class="max-w-5xl mx-auto md:flex">
-                    <div class="md:w-1/4 md:flex md:flex-col">
-                        <div class="text-left w-full flex-grow md:pr-5">
-                            <h1 class="text-3xl font-bold mb-5">Compte Spotify</h1>
-                            <h3 class="text-md font-medium mb-5">Voici la liste de nos différents plans</h3>
-                        </div>
-                        <div class="w-full mb-2">
-                            <p class="text-xs">*Voir les conditions</p>
-                        </div>
-                    </div>
-                    <div class="md:w-3/4">
-                        <div class="max-w-4xl mx-auto md:flex">
+    {% for produit in produits %}
+
                             <div class="w-full md:w-1/3 md:max-w-none bg-white px-8 md:px-10 py-8 md:py-10 mb-3 mx-auto md:my-2 rounded-md shadow-lg shadow-gray-600 md:flex md:flex-col">
                                 <div class="w-full flex-grow">
-                                    <h2 class="text-center font-bold uppercase mb-4">Compte premium public</h2>
-                                    <h3 class="text-center font-bold text-4xl mb-5">0.50€<span class="text-sm">/mois</span></h3>
-                                    <ul class="text-sm mb-8">
+                                    <h2 class="text-center font-bold uppercase mb-4">{{ produit.libelle }}</h2>
+                                    {{ produit.tarif }}
+                                    {% for categorie in categories %}
+                                    <h3 class="text-center font-bold text-4xl mb-5">{{ categorie.libelle }}<span class="text-sm">/mois</span></h3>
+    {% endfor %}
+        <ul class="text-sm mb-8">
                                         <li class="leading-tight"><i class="mdi mdi-check-bold text-lg"></i> Compte partager avec d'autres utilisateurs</li>
                                         <li class="leading-tight"><i class="mdi mdi-check-bold text-lg"></i> Ecoute illimité</li>
                                     </ul>
@@ -109,9 +102,10 @@
                                     <button class="font-bold bg-gray-600 hover:bg-gray-700 text-white rounded-md px-10 py-2 transition-colors w-full">Acheter</button>
                                 </div>
                             </div>
-                            <div class="w-full md:w-1/3 md:max-w-none bg-white px-8 md:px-10 py-8 md:py-10 mb-3 mx-auto md:my-2 rounded-md shadow-lg shadow-gray-600 md:flex md:flex-col">
+    {% endfor %}
+                            {#<div class="w-full md:w-1/3 md:max-w-none bg-white px-8 md:px-10 py-8 md:py-10 mb-3 mx-auto md:my-2 rounded-md shadow-lg shadow-gray-600 md:flex md:flex-col">
                                 <div class="w-full flex-grow">
-                                    <h2 class="text-center font-bold uppercase mb-4">Compte premium partager</h2>
+                                    <h2 class="text-center font-bold uppercase mb-4">{{ produit.idcategorie }}</h2>
                                     <h3 class="text-center font-bold text-4xl md:text-5xl mb-5">1.00€<span class="text-sm">/mois</span></h3>
                                     <ul class="text-sm mb-8">
                                         <li class="leading-tight"><i class="mdi mdi-check-bold text-lg"></i> Compte partager avec 1/2 autres utilisateurs</li>
@@ -123,6 +117,7 @@
                                     <button class="font-bold bg-gray-600 hover:bg-gray-700 text-white rounded-md px-10 py-2 transition-colors w-full">Acheter</button>
                                 </div>
                             </div>
+
                             <div class="w-full md:w-1/3 md:max-w-none bg-white px-8 md:px-10 py-8 md:py-10 mb-3 mx-auto md:my-2 rounded-md shadow-lg shadow-gray-600 md:flex md:flex-col">
                                 <div class="w-full flex-grow">
                                     <h2 class="text-center font-bold uppercase mb-4">Compte premium personnel</h2>
@@ -138,13 +133,40 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>#}
                 </div>
             </div>
         </div>
 
 
 
+
+
+{#{% for produit in produits %}
+<tr>
+
+    <!-- This is an example component -->
+    <main class="px-3">
+
+                <div class="px-10 py-6 mb-10 text-center">
+                    <div class="text-2xl font-bold text-gray-600-500 mb-4 produitlibelle">{{ produit.libelle }}</div>
+                    <span class="text-sm">
+                            #}{#Prix: {{ produit.tarif }}
+                            Catégorie: {{ produit.idcategorie }}#}{#
+                        {{ produit.idcategorie }}
+            </span><br>
+                    <button class="m-4 w-60 text-lg h-16 text-white font-extrabold bg-gray-600">{{ _voirproduit }}</button>
+                </div>
+
+                #}{#                        <button class="w-full text-lg h-16 text-white font-extrabold bg-gray-600">Voir le produit</button>#}{#
+            </div>
+
+
+        </div>
+    </main>#}
+{#
+    {% endfor %}#}
+    {% endblock %}
     {# <style>
             .titre{
                 font-size: {{ _fontsizetitle }};
@@ -191,6 +213,6 @@
 
 
 
-    {% endif %}
+{#    {% endif %}#}
 
-{% endblock %}
+

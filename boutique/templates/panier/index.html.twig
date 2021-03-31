@@ -15,8 +15,62 @@
 {#    {{ dump(montant_total) }}#}
 {#    {{ dump(les_produits) }}#}
 
+    <div class="w-auto bg-white px-10 py-10">
+        <div class="flex justify-between border-b pb-8">
+            <h1 class="font-semibold text-2xl">Panier</h1>
+            <h2 class="font-semibold text-2xl">test</h2>
+        </div>
+    </div>
 
-        <h1 class="text text-center">Panier</h1>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Nom</th>
+            <th class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Quantite</th>
+            <th class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Prix</th>
+            {% if is_granted('ROLE_ADMIN') %}
+                <th class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">actions</th>
+            {% endif %}
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for contenir in contenirs %}
+            <tr>
+                <div>
+                    <td><u>{{ contenir.idproduit.libelle }}</u></td>
+                    <td>{{ contenir.quantite }}</td>
+                </div>
+
+                <td>{{ contenir.idproduit.tarif * contenir.quantite}}€</td>
+                <td>{{ include('contenir/_delete_form.html.twig') }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td class="font-semibold text-gray-600 text-xs uppercase w-1/5 text-center">Vous n'avez aucun article dans votre panier</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {#<h1 class="text text-center">Panier</h1>
 
         <table class="table">
             <thead class="thead-dark">
@@ -36,7 +90,6 @@
                 <tr>
                     <td><img src="{{ contenir.idproduit.image }}" width="125" height="150"></td>
                     <td>{{ contenir.quantite }}</td>
-{#                    <td>{{ contenir.idcategorie }}</td>#}
                     <td><u>{{ contenir.idproduit.libelle }}</u></td>
                     <td>{{ contenir.idproduit.tarif * contenir.quantite}}€</td>
                     <td>{{ include('contenir/_delete_form.html.twig') }}</td>
@@ -55,8 +108,26 @@
         <button type="button"><a href="">Valider le panier</a></button>
 
 
-{#        <a href="{{ path('contenir_new') }}">Create new</a>#}
+        <a href="{{ path('contenir_new') }}">Create new</a>
 
 
-</div>
+</div>#}
+
+    <section class="p-4">
+        <div class="flex flex-wrap text-center">
+            <div class="md:w-1/2 py-4 md:px-10 mb-4 md:mb-0">
+                <svg class="text-indigo-600 w-12 h-12 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+                <h3 class="text-2xl mb-3 font-semibold font-heading">Vos comptes sont garantis pendant 1 an</h3>
+            </div>
+            <div class="md:w-1/2 py-4 md:px-10 mb-4 md:mb-0 md:border-l">
+                <svg class="text-indigo-600 w-12 h-12 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                </svg>
+                <h3 class="text-2xl mb-3 font-semibold font-heading">Rentabilité assuré</h3>
+            </div>
+        </div>
+    </section>
 {% endblock %}
