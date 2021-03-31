@@ -13,37 +13,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2233dfd8-c47e-43bf-a44e-164fafa1f4e0" name="Default Changelist" comment="Installation du site symfony, avec la sécurité, la boutique (il manque le panier)">
-      <change afterPath="$PROJECT_DIR$/boutique/config/packages/config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boutique/config/packages/easy_admin.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boutique/public/(old)style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boutique/public/accueil.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boutique/public/images/background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boutique/public/images/fond.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boutique/public/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boutique/public/produit.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boutique/public/render/render1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boutique/src/Managers/PlaceholderManager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boutique/templates/(old)base.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boutique/templates/accueil/(save)index.html.twig" afterDir="false" />
+    <list default="true" id="2233dfd8-c47e-43bf-a44e-164fafa1f4e0" name="Default Changelist" comment="Panel Admin ajouter">
+      <change afterPath="$PROJECT_DIR$/boutique/templates/bundles/EasyAdminBundle/default/layout.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/public/images/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/public/images/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/public/images/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boutique/public/accueil.css" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/public/accueil.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boutique/public/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/public/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/src/Controller/AccueilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/Controller/AccueilController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/src/Controller/ContenirController.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/Controller/ContenirController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/src/Controller/CorrespondreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/Controller/CorrespondreController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/src/Controller/PanierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/Controller/PanierController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boutique/src/Controller/Admin/CategorieCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/Controller/Admin/CategorieCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boutique/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/Controller/Admin/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boutique/src/Controller/Admin/ProduitCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/Controller/Admin/ProduitCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boutique/src/Controller/Admin/UserCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/Controller/Admin/UserCrudController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boutique/src/Controller/ProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/Controller/ProduitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/src/Entity/Produit.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/Entity/Produit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boutique/src/Managers/PlaceholderManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/Managers/PlaceholderManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boutique/templates/accueil/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/templates/accueil/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boutique/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/templates/panel/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/templates/panel/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boutique/templates/panier/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/templates/panier/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boutique/templates/produit/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/templates/produit/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boutique/templates/produit/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/templates/produit/show.html.twig" afterDir="false" />
@@ -63,6 +45,7 @@
       <list>
         <option value="composer.json" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -183,6 +166,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
@@ -190,22 +174,23 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/boutique/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/boutiquev4/templates/produit" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\t.real\PhpstormProjects\projetSF6\boutique\config\packages\easy_admin" />
-      <recent name="C:\Users\t.real\PhpstormProjects\projetSF6\boutique\public\render" />
-      <recent name="C:\Users\t.real\PhpstormProjects\projetSF6\boutique\public\images" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\t.real\PhpstormProjects\projetSF6\boutiquev4\templates\produit" />
       <recent name="C:\Users\t.real\PhpstormProjects\projetSF6\boutique\public" />
       <recent name="C:\Users\t.real\PhpstormProjects\projetSF6\boutique\templates" />
       <recent name="C:\Users\t.real\PhpstormProjects\projetSF6\boutique\templates\accueil" />
+      <recent name="C:\Users\t.real\PhpstormProjects\projetSF6\boutique\public\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\t.real\PhpstormProjects\projetSF6\boutique\config\packages\easy_admin" />
+      <recent name="C:\Users\t.real\PhpstormProjects\projetSF6\boutique\public\render" />
       <recent name="C:\Users\t.real\PhpstormProjects\projetSF6\boutique\public\images" />
     </key>
   </component>
@@ -245,7 +230,15 @@
       <workItem from="1615446756429" duration="21739000" />
       <workItem from="1615902576563" duration="5561000" />
       <workItem from="1615973108757" duration="13000" />
-      <workItem from="1616054507906" duration="8308000" />
+      <workItem from="1616054507906" duration="8868000" />
+      <workItem from="1616069330064" duration="2008000" />
+      <workItem from="1616071578553" duration="91000" />
+      <workItem from="1616071682309" duration="8023000" />
+      <workItem from="1616506008007" duration="6171000" />
+      <workItem from="1616512823135" duration="1465000" />
+      <workItem from="1616656011612" duration="5827000" />
+      <workItem from="1616675562119" duration="11016000" />
+      <workItem from="1617109813008" duration="6000" />
     </task>
     <task id="LOCAL-00001" summary="Installation du site symfony, avec la sécurité">
       <created>1604493381574</created>
@@ -289,7 +282,21 @@
       <option name="project" value="LOCAL" />
       <updated>1614697768616</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Panel Admin ajouter">
+      <created>1616063930473</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1616063930473</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Panel Admin ajouter">
+      <created>1616063944326</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1616063944326</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,7 +317,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Installation du site symfony, avec la sécurité" />
     <MESSAGE value="Installation du site symfony, avec la sécurité, la boutique (il manque le panier)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Installation du site symfony, avec la sécurité, la boutique (il manque le panier)" />
+    <MESSAGE value="Panel Admin ajouter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Panel Admin ajouter" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1151" y="285" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1615378238771">
@@ -321,32 +329,37 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615909098278" />
-    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog" timestamp="1616061459590">
+    <state x="115" y="82" width="1736" height="856" key="DirDiffDialog" timestamp="1616662034365">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616061459590" />
+    <state x="115" y="82" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616662034365" />
     <state x="-1102" y="290" key="FileChooserDialogImpl" timestamp="1615383699426">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1102" y="290" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1615383699426" />
     <state x="818" y="290" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615301914481" />
-    <state x="-1232" y="243" key="NewPhpClassDialog" timestamp="1615377836128">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="688" y="243" key="NewPhpClassDialog" timestamp="1616080158409">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1232" y="243" key="NewPhpClassDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1615377836128" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1615448755749">
+    <state x="688" y="243" key="NewPhpClassDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616080158409" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1616071922406">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616071922406" />
+    <state x="630" y="153" key="SettingsEditor" timestamp="1616662425379">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1459" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1615383701004" />
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615448755749" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614697774562">
+    <state x="630" y="153" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616662425379" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1616063966415">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1614697774562" />
-    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1615449206686">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616063966415" />
+    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1616683674431">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615449206686" />
+    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616683674431" />
     <state x="845" y="360" width="621" height="521" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1615448755391">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -357,10 +370,14 @@
     </state>
     <state x="-1090" y="412" key="publish.login/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1615369171143" />
     <state x="830" y="412" key="publish.login/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615301280676" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1616061744924">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1616686363176">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616686363176" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1616075351412">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1615390429430" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616061744924" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616075351412" />
   </component>
 </project>

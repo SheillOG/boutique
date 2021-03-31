@@ -91,33 +91,33 @@
 
 
 
+{#
+        <h1>Produit</h1>
 
-    {#    <h1>Produit</h1>#}
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ produit.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ produit.libelle }}</td>
+            </tr>
+            <tr>
+                <th>Tarif</th>
+                <td>{{ produit.tarif }}</td>
+            </tr>
+            <tr>
+                <th>Prodyut</th>
+                <td><img src="{{ produit.image }}" width="200" height="200"></td>
+            </tr>
+        </tbody>
+    </table>
 
-{#    <table class="table">#}
-{#        <tbody>#}
-{#            <tr>#}
-{#                <th>Id</th>#}
-{#                <td>{{ produit.id }}</td>#}
-{#            </tr>#}
-{#            <tr>#}
-{#                <th>Libelle</th>#}
-{#                <td>{{ produit.libelle }}</td>#}
-{#            </tr>#}
-{#            <tr>#}
-{#                <th>Tarif</th>#}
-{#                <td>{{ produit.tarif }}</td>#}
-{#            </tr>#}
-{#            <tr>#}
-{#                <th>Prodyut</th>#}
-{#                <td><img src="{{ produit.image }}" width="200" height="200"></td>#}
-{#            </tr>#}
-{#        </tbody>#}
-{#    </table>#}
+    <a href="{{ path('produit_index') }}">back to list</a>
 
-{#    <a href="{{ path('produit_index') }}">back to list</a>#}
+    <a href="{{ path('produit_edit', {'id': produit.id}) }}">edit</a>
 
-{#    <a href="{{ path('produit_edit', {'id': produit.id}) }}">edit</a>#}
-
-{#    {{ include('produit/_delete_form.html.twig') }}#}
+    {{ include('produit/_delete_form.html.twig') }}#}
 {% endblock %}

@@ -17,6 +17,7 @@ class DashboardController extends AbstractDashboardController
     /**
      * @Route("/admin", name="admin")
      */
+
     public function index(): Response
     {
         return parent::index();
@@ -25,14 +26,16 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('ALT Panel Admin');
+            ->setTitle('Panel Admin');
     }
 
     public function configureMenuItems(): iterable
     {
 /*        yield MenuItem::linktoDashboard('Accueil', 'fa fa-home', User::class);*/
+        yield MenuItem::section('Profil');
         yield MenuItem::linkToCrud('Utilisateur', 'fas fa-user', User::class);
-        yield MenuItem::linkToCrud('Categorie', 'fas fa-window-close', Categorie::class);
-        yield MenuItem::linkToCrud('Produit', 'fas fa-warehouse', Produit::class);
+        yield MenuItem::section('Gestion Produit');
+        yield MenuItem::linkToCrud('Categorie', 'fas fa-book', Categorie::class);
+        yield MenuItem::linkToCrud('Produit', 'fas fa-shopping-bag', Produit::class);
     }
 }

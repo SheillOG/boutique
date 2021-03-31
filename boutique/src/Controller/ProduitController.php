@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Produit;
 use App\Form\ProduitType;
 use App\Managers\PlaceholderManager;
+use App\Repository\CategorieRepository;
 use App\Repository\ProduitRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,10 +23,10 @@ class ProduitController extends AbstractController
      * @param ProduitRepository $produitRepository
      * @return Response
      */
-    public function index(ProduitRepository $produitRepository): Response
+    public function index(ProduitRepository $produitRepository, CategorieRepository $categorieRepository): Response
     {
         return $this->render('produit/index.html.twig', array_merge(PlaceholderManager::load(),
-            ["produits" => $produitRepository->findAll()]));
+            ["produits" => $produitRepository->findAll(), "categories" => $categorieRepository->findAll()]));
     }
 
     /**

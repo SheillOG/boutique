@@ -38,14 +38,14 @@ header {
     transition: all 0.3s ease 0s;
 }
 
-.nav__links li a:hover {
-    color: #0088a9;
+/*.nav__links li a:hover {
+    color: #ffffff;
 }
 
 .cta {
     margin-left: 50px;
     padding: 4px 25px;
-    background-color: rgba(0, 136, 169, 1);
+    background-color: #2d3744;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -53,7 +53,12 @@ header {
 }
 
 .cta:hover {
-    background-color: rgba(0, 136, 169, 0.8);
+    background-color: #2d3744;
+}*/
+
+.bouttonlogin{
+    background-color: #2d3744;
+    margin-left: 50px;
 }
 
 /* Mobile Nav */
@@ -125,4 +130,8 @@ header {
     .menu {
         display: initial;
     }
+}
+
+.footericon{
+    height: 50px;
 }
