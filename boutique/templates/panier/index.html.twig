@@ -17,41 +17,10 @@
 
     <div class="w-auto bg-white px-10 py-10">
         <div class="flex justify-between border-b pb-8">
-            <h1 class="font-semibold text-2xl">Panier</h1>
-            <h2 class="font-semibold text-2xl">test</h2>
+            <h1 class="font-semibold text-2xl text-center">Panier</h1>
         </div>
     </div>
 
-    <table class="table">
-        <thead class="thead-dark">
-        <tr>
-            <th class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Nom</th>
-            <th class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Quantite</th>
-            <th class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Prix</th>
-            {% if is_granted('ROLE_ADMIN') %}
-                <th class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">actions</th>
-            {% endif %}
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for contenir in contenirs %}
-            <tr>
-                <div>
-                    <td><u>{{ contenir.idproduit.libelle }}</u></td>
-                    <td>{{ contenir.quantite }}</td>
-                </div>
-
-                <td>{{ contenir.idproduit.tarif * contenir.quantite}}€</td>
-                <td>{{ include('contenir/_delete_form.html.twig') }}</td>
-            </tr>
-        {% else %}
-            <tr>
-                <td class="font-semibold text-gray-600 text-xs uppercase w-1/5 text-center">Vous n'avez aucun article dans votre panier</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
 
 
@@ -70,7 +39,7 @@
 
 
 
-        {#<h1 class="text text-center">Panier</h1>
+
 
         <table class="table">
             <thead class="thead-dark">
@@ -100,18 +69,19 @@
                 </tr>
             {% endfor %}
             </tbody>
+
         </table>
         <br>
         <a>Prix total: <b>{{ panier.montanttotal }}</b>€</a>
         <button type="button"><a href="{{ path('panier_remove')}}">Vider panier</a></button>
 
-        <button type="button"><a href="">Valider le panier</a></button>
 
 
-        <a href="{{ path('contenir_new') }}">Create new</a>
 
 
-</div>#}
+{#EMAIL : sb-o8bg475785621@personal.example.com#}
+
+</div>
 
     <section class="p-4">
         <div class="flex flex-wrap text-center">
@@ -130,4 +100,36 @@
             </div>
         </div>
     </section>
+
+    {% if app.session.get('panier') is defined %}
+        {% block javascripts %}
+
+            <script src="https://www.paypal.com/sdk/js?client-id=test"></script>
+            <script>
+                paypal.Buttons({
+                    createOrder: function(data,actions) {
+                        return actions.order.create({
+                            purchase_units: [{
+                                amount: {
+                                    value: {{ montant_total }}
+                                }
+                            }]
+                        });
+                    },
+                    onApprove: function(data, actions) {
+                        return actions.order.capture().then(function(details)
+                        {
+                            alert('La  transaction a bien été valider ' + details.payer.name.given_name);
+                        });
+                    }
+
+                }).render('body');
+            </script>
+
+        {% endblock %}
+    {% else %}
+
+    {% endif %}
+
+
 {% endblock %}

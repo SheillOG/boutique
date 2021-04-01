@@ -13,23 +13,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2233dfd8-c47e-43bf-a44e-164fafa1f4e0" name="Default Changelist" comment="Panel Admin ajouter">
-      <change afterPath="$PROJECT_DIR$/boutique/templates/bundles/EasyAdminBundle/default/layout.html.twig" afterDir="false" />
+    <list default="true" id="2233dfd8-c47e-43bf-a44e-164fafa1f4e0" name="Default Changelist" comment="Boutique V4 A Terminer pour la remise du projet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/public/accueil.css" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/public/accueil.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/public/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/public/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/src/Controller/Admin/CategorieCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/Controller/Admin/CategorieCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/Controller/Admin/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/src/Controller/Admin/ProduitCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/Controller/Admin/ProduitCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/src/Controller/Admin/UserCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/Controller/Admin/UserCrudController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boutique/src/Controller/ProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/Controller/ProduitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/src/Managers/PlaceholderManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/Managers/PlaceholderManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/templates/accueil/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/templates/accueil/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boutique/templates/panier/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/templates/panier/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/templates/produit/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/templates/produit/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/templates/produit/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/templates/produit/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boutique/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jQuery/connexion.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jQuery/gestionUtilisateur.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jQuery/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jQuery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jQuery/saisie.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jQuery/saisie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jQuery/verifId.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,6 +234,8 @@
       <workItem from="1616656011612" duration="5827000" />
       <workItem from="1616675562119" duration="11016000" />
       <workItem from="1617109813008" duration="6000" />
+      <workItem from="1617183932921" duration="74000" />
+      <workItem from="1617265959164" duration="5744000" />
     </task>
     <task id="LOCAL-00001" summary="Installation du site symfony, avec la sécurité">
       <created>1604493381574</created>
@@ -296,7 +293,21 @@
       <option name="project" value="LOCAL" />
       <updated>1616063944326</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Boutique V4 A Terminer pour la remise du projet">
+      <created>1617183966476</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1617183966476</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Boutique V4 A Terminer pour la remise du projet">
+      <created>1617183977932</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1617183977932</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,21 +329,22 @@
     <MESSAGE value="Installation du site symfony, avec la sécurité" />
     <MESSAGE value="Installation du site symfony, avec la sécurité, la boutique (il manque le panier)" />
     <MESSAGE value="Panel Admin ajouter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Panel Admin ajouter" />
+    <MESSAGE value="Boutique V4 A Terminer pour la remise du projet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Boutique V4 A Terminer pour la remise du projet" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1151" y="285" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1615378238771">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1151" y="285" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1615378238771" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615909098278">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617267077262">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615909098278" />
-    <state x="115" y="82" width="1736" height="856" key="DirDiffDialog" timestamp="1616662034365">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1617267077262" />
+    <state x="115" y="82" width="1736" height="856" key="DirDiffDialog" timestamp="1617267138220">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="115" y="82" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616662034365" />
+    <state x="115" y="82" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1617267138220" />
     <state x="-1102" y="290" key="FileChooserDialogImpl" timestamp="1615383699426">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
@@ -352,10 +364,10 @@
     </state>
     <state x="-1459" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1615383701004" />
     <state x="630" y="153" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616662425379" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1616063966415">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1617183992854">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616063966415" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1617183992854" />
     <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1616683674431">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

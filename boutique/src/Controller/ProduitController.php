@@ -7,10 +7,15 @@ use App\Form\ProduitType;
 use App\Managers\PlaceholderManager;
 use App\Repository\CategorieRepository;
 use App\Repository\ProduitRepository;
+use http\Client;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Encoder\XmlEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 
 /**
@@ -28,6 +33,7 @@ class ProduitController extends AbstractController
         return $this->render('produit/index.html.twig', array_merge(PlaceholderManager::load(),
             ["produits" => $produitRepository->findAll(), "categories" => $categorieRepository->findAll()]));
     }
+
 
     /**
      * @Route("/new", name="produit_new", methods={"GET","POST"})
@@ -51,6 +57,8 @@ class ProduitController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+
 
     /**
      * @Route("/{id}", name="produit_show", methods={"GET"})
@@ -98,5 +106,22 @@ class ProduitController extends AbstractController
 
         return $this->redirectToRoute('produit_index');
     }
+
+    /**
+     * @Route("/api/{id}", name="api_produit_show")
+     */
+    public function webserviceById(Produit $produit): Response{
+
+        $encoders = [new xmlEncoder(), new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $response = new Response();
+        $response->setContent($serializer->serialize($produit, 'json'));
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+    }
+
+
 
 }
