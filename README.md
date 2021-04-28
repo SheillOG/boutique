@@ -5,6 +5,7 @@ Le projet WEB à été développé à partir d'un serveur Docker sous debian 10 
 ## 1. Contenu du projet 📑
 
  **1.**
+ 
  ![Symfony icon](https://img.icons8.com/color/2x/symfony.png)
  
 ![L'outil de recrutement qui vous facilite la vie - Twig Talent](https://www.twigtalent.com/wp-content/uploads/2019/02/logo-twig-large@2x.png)
