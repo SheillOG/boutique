@@ -3,8 +3,6 @@
 Le projet WEB à été développé à partir d'un serveur Docker sous debian 10 sur une machine virtuelle (VMWare) en permier temps, en deuxième temps sous Windows 10 avec Symfony et WampServer
 
 ## 1. Contenu du projet 📑
-
- **1.**
  
  ![Symfony icon](https://img.icons8.com/color/2x/symfony.png)
  
