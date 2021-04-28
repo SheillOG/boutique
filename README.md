@@ -1,12 +1,11 @@
-# Symfony5 | SourceCode | BTS SIO
+# PPE 4 PROJET BOUTIQUE E-COMMERCE AVEC Symfony5 | BTS SIO
 
-Ce site WEB à été développé à partir d'un serveur Docker sous debian9 sur une machine virtuelle (VMWare) 
+Le projet WEB à été développé à partir d'un serveur Docker sous debian 10 sur une machine virtuelle (VMWare) en permier temps, en deuxième temps sous Windows 10 avec Symfony et WampServer
 
 ## 1. Contenu du projet 📑
 
- **1. Beaucoup de modules, bundles, et framework  (NodesJS, Webpack, Yarn et plein d'autres...)**
- 
- ![Node Js icon](https://img.icons8.com/windows/2x/node-js.png)![Webpack icon](https://img.icons8.com/dusk/2x/webpack.png)![Symfony icon](https://img.icons8.com/color/2x/symfony.png)![Yarn Logo icon](https://img.icons8.com/windows/2x/yarn-logo.png)![NPM icon](https://img.icons8.com/color/2x/npm.png)
+ **1.**
+ [Symfony icon](https://img.icons8.com/color/2x/symfony.png)![Yarn Logo icon](https://img.icons8.com/windows/2x/yarn-logo.png)![NPM icon](https://img.icons8.com/color/2x/npm.png)
  
 ![L'outil de recrutement qui vous facilite la vie - Twig Talent](https://www.twigtalent.com/wp-content/uploads/2019/02/logo-twig-large@2x.png)
  
