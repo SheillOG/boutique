@@ -13,19 +13,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2233dfd8-c47e-43bf-a44e-164fafa1f4e0" name="Default Changelist" comment="Boutique V4 A Terminer pour la remise du projet">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/src/Controller/ProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/src/Controller/ProduitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/templates/panier/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/templates/panier/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/boutique/templates/security/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jQuery/connexion.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jQuery/gestionUtilisateur.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jQuery/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jQuery/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jQuery/saisie.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jQuery/saisie.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jQuery/verifId.php" beforeDir="false" />
-    </list>
+    <list default="true" id="2233dfd8-c47e-43bf-a44e-164fafa1f4e0" name="Default Changelist" comment="Boutique V4 A Terminer pour la remise du projet" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -163,16 +151,17 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/boutiquev4/templates/produit" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -236,6 +225,9 @@
       <workItem from="1617109813008" duration="6000" />
       <workItem from="1617183932921" duration="74000" />
       <workItem from="1617265959164" duration="5744000" />
+      <workItem from="1619552685250" duration="3157000" />
+      <workItem from="1619600194331" duration="4824000" />
+      <workItem from="1619610718409" duration="2974000" />
     </task>
     <task id="LOCAL-00001" summary="Installation du site symfony, avec la sécurité">
       <created>1604493381574</created>
@@ -331,65 +323,5 @@
     <MESSAGE value="Panel Admin ajouter" />
     <MESSAGE value="Boutique V4 A Terminer pour la remise du projet" />
     <option name="LAST_COMMIT_MESSAGE" value="Boutique V4 A Terminer pour la remise du projet" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="-1151" y="285" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1615378238771">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1151" y="285" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1615378238771" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617267077262">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1617267077262" />
-    <state x="115" y="82" width="1736" height="856" key="DirDiffDialog" timestamp="1617267138220">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="115" y="82" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1617267138220" />
-    <state x="-1102" y="290" key="FileChooserDialogImpl" timestamp="1615383699426">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1102" y="290" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1615383699426" />
-    <state x="818" y="290" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615301914481" />
-    <state x="688" y="243" key="NewPhpClassDialog" timestamp="1616080158409">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1232" y="243" key="NewPhpClassDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1615377836128" />
-    <state x="688" y="243" key="NewPhpClassDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616080158409" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1616071922406">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616071922406" />
-    <state x="630" y="153" key="SettingsEditor" timestamp="1616662425379">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1459" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1615383701004" />
-    <state x="630" y="153" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616662425379" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1617183992854">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1617183992854" />
-    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1616683674431">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616683674431" />
-    <state x="845" y="360" width="621" height="521" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1615448755391">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1075" y="360" width="621" height="521" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1615383700515" />
-    <state x="845" y="360" width="621" height="521" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615448755391" />
-    <state x="-1090" y="412" key="publish.login" timestamp="1615369171143">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1090" y="412" key="publish.login/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1615369171143" />
-    <state x="830" y="412" key="publish.login/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1615301280676" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1616686363176">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616686363176" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1616075351412">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1615390429430" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616075351412" />
   </component>
 </project>
