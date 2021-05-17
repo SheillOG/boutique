@@ -9,7 +9,7 @@
   * Gérer des ventes
   * Gérer des comptes client/admin
 
-** 2. Système de paiment (Avec intégration de l'API Paypal et une intégration manuel)**
+  * Système de paiment (Avec intégration de l'API Paypal et une intégration manuel)**
 
 ### Installation du site ✏️
 ```sh
@@ -18,17 +18,15 @@ cd /boutique
 git clone -b https://github.com/SheillOG/boutique
 ```
 
-PARTIE WEB
+### Installation logiciel
 
 Pour que le logiciel soit fonctionnel, il vous faut installer MySQL et PHPMyAdmin, il est possible de les installer grâce à WAMP (Windows), pour les utilisateurs de Linux voici un tutoriel: http://elisabeth.pointal.org/doc/code/server/lamp/phpmyadmin
-
-Il vous faudra ensuite installer la base de données du logiciel:
 
 ### Connectez vous sur PHPMyAdmin
 Allez sur la page Importer
  - Cliquez sur choisir un fichier (cela vous ouvre un Explorateur de fichiers)
- - Rendez-vous dans le dossier PPE4 que nous avons fait auparavant
- - Séléctionnez le fichier PPE4.sql
+ - Rendez-vous dans le dossier boutique que nous avons fait auparavant
+ - Séléctionnez le fichier boutique.sql
 
 
 ## Application mobile 
