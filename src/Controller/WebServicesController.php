@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Produit;
+use App\Entity\Categories;
+use App\Entity\Users;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -39,4 +41,40 @@ class WebServicesController extends AbstractController
         $response->headers->set('Content-Type', 'application/json');
         return $response;
     }
+    
+    /**
+     * @Route("/apiallcategorie", name="apiall_categorie_show")
+     */
+    public function webserviceAll(): Response{
+
+        $lesCategories=$this->getDoctrine()->getRepository(Categorie::class)->findAll();
+
+        $encoders = [new xmlEncoder(), new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $response = new Response();
+        $response->setContent($serializer->serialize($lesCategories, 'json'));
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+    }
+    
+        /**
+     * @Route("/apialluser", name="apiall_user_show")
+     */
+    public function webserviceAll(): Response{
+
+        $lesUsers=$this->getDoctrine()->getRepository(Users::class)->findAll();
+
+        $encoders = [new xmlEncoder(), new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $response = new Response();
+        $response->setContent($serializer->serialize($lesUsers, 'json'));
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+    }
+    
+    
 }
