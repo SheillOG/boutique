@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Produit;
 use App\Entity\Categories;
-use App\Entity\Users;
+use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -64,14 +64,14 @@ class WebServicesController extends AbstractController
      */
     public function webserviceAll(): Response{
 
-        $lesUsers=$this->getDoctrine()->getRepository(Users::class)->findAll();
+        $lesUser=$this->getDoctrine()->getRepository(User::class)->findAll();
 
         $encoders = [new xmlEncoder(), new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
         $serializer = new Serializer($normalizers, $encoders);
 
         $response = new Response();
-        $response->setContent($serializer->serialize($lesUsers, 'json'));
+        $response->setContent($serializer->serialize($lesUser, 'json'));
         $response->headers->set('Content-Type', 'application/json');
         return $response;
     }
